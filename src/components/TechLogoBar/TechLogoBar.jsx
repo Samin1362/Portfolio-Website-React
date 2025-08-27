@@ -34,7 +34,7 @@ const techLogos = [
 
 
   return (
-    <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}} className='max-w-[1240px] mx-auto my-[50px]'>
+    <div style={{ height: '80px', position: 'relative', overflow: 'hidden'}} className='max-w-[1240px] mx-auto my-[50px]'>
       <LogoLoop
         logos={techLogos}
         speed={60}
