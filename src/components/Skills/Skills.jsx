@@ -18,7 +18,9 @@ const Skills = () => {
           </div>
           <h3>What I Bring to the Table</h3>
         </div>
-        <h1 className="text-[48px] text-center font-bold">My Key Skills</h1>
+        <h1 className="text-[30px] md:text-[48px] text-center font-bold">
+          My Key Skills
+        </h1>
       </div>
       {/* cards  */}
       <AnimatedContent
@@ -33,39 +35,42 @@ const Skills = () => {
         threshold={0.2}
         delay={0.3}
       >
-        <div className="flex justify-center gap-[45px] mt-[40px]">
-        {/* card */}
-        <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[360px] p-[30px] w-fit flex flex-col items-center justify-center rounded-[200px]">
-          <div>
-            <FaHtml5 color="#E34F26" size={130} />
+        <div className="grid grid-cols-2 md:grid-cols-5 justify-center md:gap-[45px] mt-[40px]">
+          {/* card */}
+          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
+            <div>
+              <FaHtml5
+                color="#E34F26"
+                className="text-[40px] md:text-[130px]"
+              />
+            </div>
+            <h1 className="text-xl md:text-2xl text-center">HTML5</h1>
           </div>
-          <h1 className="text-2xl text-center">HTML5</h1>
-        </div>
-        <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[360px] p-[30px] w-fit flex flex-col items-center justify-center rounded-[200px]">
-          <div>
-            <RiTailwindCssFill color="#61dafb" size={130} />
+          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
+            <div>
+              <RiTailwindCssFill color="#61dafb" className="text-[40px] md:text-[130px]" />
+            </div>
+            <h1 className="text-xl md:text-2xl text-center">Tailwind CSS</h1>
           </div>
-          <h1 className="text-2xl text-center">Tailwind CSS</h1>
-        </div>
-        <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[360px] p-[30px] w-fit flex flex-col items-center justify-center rounded-[200px]">
-          <div>
-            <IoLogoJavascript color="#F7DF1E" size={130} />
+          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
+            <div>
+              <IoLogoJavascript color="#F7DF1E" className="text-[40px] md:text-[130px]" />
+            </div>
+            <h1 className="text-xl md:text-2xl text-center">JavaScript</h1>
           </div>
-          <h1 className="text-2xl text-center">JavaScript</h1>
-        </div>
-        <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[360px] p-[30px] w-fit flex flex-col items-center justify-center rounded-[200px]">
-          <div>
-            <FaReact color="#61dafb" size={130} />
+          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
+            <div>
+              <FaReact color="#61dafb" className="text-[40px] md:text-[130px]" />
+            </div>
+            <h1 className="text-xl md:text-2xl text-center">React Developer</h1>
           </div>
-          <h1 className="text-2xl text-center">React Developer</h1>
-        </div>
-        <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[360px] p-[30px] w-fit flex flex-col items-center justify-center rounded-[200px]">
-          <div>
-            <FaGitAlt color="#F97316" size={130} />
+          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
+            <div>
+              <FaGitAlt color="#F97316" className="text-[40px] md:text-[130px]" />
+            </div>
+            <h1 className="text-xl md:text-2xl text-center">Project Management</h1>
           </div>
-          <h1 className="text-2xl text-center">Project Management</h1>
         </div>
-      </div>
       </AnimatedContent>
     </div>
   );
