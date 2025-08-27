@@ -1,0 +1,111 @@
+{
+  "basics": {
+    "name": "MD. SAMIN ISRAK",
+    "label": "Front-End Focused Full-Stack Developer | Machine Learning Enthusiast",
+    "email": "saminisrak1991@gmail.com",
+    "phone": "+8801757874416",
+    "location": {
+      "address": "Kuril Chowrasta, Vatara",
+      "city": "Dhaka",
+      "country": "Bangladesh"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "Samin1362",
+        "url": "https://github.com/Samin1362"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "samin-israk",
+        "url": "https://www.linkedin.com/in/samin-israk"
+      }
+    ]
+  },
+  "summary": "Front-end focused full-stack developer with strong skills in modern UI/UX and hands-on experience in machine learning projects.",
+  "education": [
+    {
+      "institution": "North South University",
+      "location": "Dhaka, Bangladesh",
+      "area": "Computer Science and Engineering",
+      "studyType": "Bachelor of Science",
+      "major": "Machine Learning",
+      "startDate": "2020",
+      "endDate": "2025",
+      "score": "3.10"
+    },
+    {
+      "institution": "Bangladesh Millennium Scholastic School and College",
+      "location": "Bogra, Bangladesh",
+      "area": "Higher Secondary Certificate",
+      "studyType": "HSC",
+      "endDate": "2019",
+      "score": "5.00"
+    },
+    {
+      "institution": "Dinajpur Academy",
+      "location": "Dinajpur, Bangladesh",
+      "area": "Secondary School Certificate",
+      "studyType": "SSC",
+      "endDate": "2017",
+      "score": "4.36"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Machine Learning",
+      "keywords": [
+        "Python (scikit-learn, PyTorch)",
+        "Deep Learning (CNNs, Transformers)",
+        "Data Preprocessing",
+        "Model Evaluation",
+        "Visualization",
+        "Hyperparameter Tuning"
+      ]
+    },
+    {
+      "name": "Frontend Development",
+      "keywords": [
+        "HTML5 & CSS3",
+        "JavaScript (ES6+)",
+        "Tailwind CSS",
+        "Responsive UI/UX Design",
+        "React"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Deep Learning for Artwork Classification",
+      "role": "Project Lead",
+      "startDate": "2025",
+      "description": "Classified 21 art styles using AlexNet, ResNet, ViT, and EfficientNet (best performer)."
+    },
+    {
+      "name": "Automated Body Measurement Using DensePose",
+      "role": "Project Lead",
+      "startDate": "2024",
+      "endDate": "2025",
+      "description": "Automated body measurement with DensePose; MAE 0.62 cm on test set."
+    },
+    {
+      "name": "Cardiovascular Disease Prediction",
+      "role": "Project Lead",
+      "startDate": "2024",
+      "description": "Predicted CVD using SMOTE and ensemble models; best accuracy with SVM (64%)."
+    },
+    {
+      "name": "MerakiNexus (AI + DeFi)",
+      "role": "Project Lead",
+      "startDate": "2025",
+      "description": "Blockchain-based platform integrating AI-generated art and DeFi."
+    }
+  ],
+  "references": [
+    {
+      "name": "Dr. Mohammad Abdul Qayum",
+      "position": "Assistant Professor, ECE Department",
+      "institution": "North South University"
+    }
+  ]
+}
