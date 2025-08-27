@@ -26,7 +26,7 @@ const Education = () => {
       >
         {/* Anything placed inside this container will be fade into view */}
 
-        <div className="cards flex flex-col gap-2">
+        <div className="cards flex flex-col gap-2 m-2">
           <div className="card flex border-2 border-gray-400 p-2 rounded-lg">
             <div className="w-1/4">
               <h1>2020 - 2025</h1>
@@ -57,7 +57,6 @@ const Education = () => {
                 </span>{" "}
                 - Bogra, Bangladesh
               </h2>
-              <h3>Major in Machine Learning</h3>
               <h4 className="font-bold text-xl">GPA: 5.00</h4>
             </div>
           </div>
@@ -73,7 +72,6 @@ const Education = () => {
                 <span className="italic">Dinajpur Academy</span> - Dinajpur,
                 Bangladesh
               </h2>
-              <h3>Major in Machine Learning</h3>
               <h4 className="font-bold text-xl">GPA: 4.36</h4>
             </div>
           </div>
