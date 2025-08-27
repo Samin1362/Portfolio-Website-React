@@ -10,6 +10,9 @@ function App() {
       <Navbar></Navbar>
       <Banner></Banner>
       <TechLogoBar></TechLogoBar>
+      <Skills></Skills>
+
+
     </>
   );
 }
