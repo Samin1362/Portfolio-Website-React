@@ -2,7 +2,7 @@ import React from "react";
 import profileImg from "../../assets/cv-image-dark.jpg";
 import Galaxy from "../Galaxy/Galaxy";
 import ShinyText from "../ShinyText/ShinyText";
-import TextType from "../TextType/TextType";
+import { FaDownload } from "react-icons/fa6";
 import TiltedCard from "../TiltedCard/TiltedCard";
 
 const Banner = () => {
@@ -47,7 +47,8 @@ const Banner = () => {
             developer with strong skills in modern UI/UX and hands-on experience
             in machine learning projects.
           </p>
-          <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center rounded-lg">
+          <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
+            <FaDownload className="text-black hover:text-green-800" />
             <ShinyText
               text="Download CV"
               disabled={false}

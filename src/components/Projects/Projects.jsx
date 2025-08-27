@@ -1,9 +1,74 @@
-import React from 'react';
+import React from "react";
+import { FaHandsHelping } from "react-icons/fa";
+import ChromaGrid from "../ChromaGrid/ChromaGrid";
 
 const Projects = () => {
+  const items = [
+    {
+      image: "https://i.postimg.cc/Hk15Js4H/temp-Image-L0-Kewf.avif",
+      title: "React Project",
+      subtitle: "Frontend Project",
+      handle: "@react",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(145deg, #3B82F6, #000)",
+      url: "https://ph-react-component-practice.netlify.app",
+    },
+    {
+      image: "https://i.postimg.cc/BnZS7rJH/temp-Image6-Wu-HWY.avif",
+      title: "JavaScript Project",
+      subtitle: "Frontend Project",
+      handle: "@javascript",
+      borderColor: "#3B82F6",
+      gradient: "linear-gradient(180deg, #10B981, #000)",
+      url: "https://samin1362.github.io/PH-B12-Assignment-5/",
+    },
+    {
+      image: "https://i.postimg.cc/nhmykTDB/temp-Imagevq-Yd3-D.avif",
+      title: "Responsive Website",
+      subtitle: "Frontend Project",
+      handle: "@html-css",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(180deg, #FFD580, #000)",
+      url: "https://samin1362.github.io/PH-B12-Assignment-2/",
+    },
+    {
+      image: "https://i.postimg.cc/yNvvXSv0/temp-Image-S0d-UHE.avif",
+      title: "Responsive Website",
+      subtitle: "Frontend Project",
+      handle: "@tailwind-css",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(180deg, #10B981, #000)",
+      url: "https://samin1362.github.io/PH-Challenge-Begins-Tailwind/",
+    },
+  ];
+
   return (
-    <div>
-      <h1>this is projects secton</h1>
+    <div className="max-w-[1240px] mx-auto">
+      {/* heading  */}
+      <div className="">
+        <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
+          <div>
+            <FaHandsHelping />
+          </div>
+          <h3>What I have done</h3>
+        </div>
+        <h1 className="text-[30px] md:text-[48px] text-center font-bold">
+          My Projects - (Click to View)
+        </h1>
+      </div>
+      {/* content  */}
+      <div
+        style={{ height: "300px", position: "relative" }}
+        className="mt-[30px]"
+      >
+        <ChromaGrid
+          items={items}
+          radius={300}
+          damping={0.45}
+          fadeOut={0.6}
+          ease="power3.out"
+        />
+      </div>
     </div>
   );
 };

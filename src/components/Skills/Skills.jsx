@@ -8,6 +8,7 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiPytorch } from "react-icons/si";
 import { SiNumpy } from "react-icons/si";
 import AnimatedContent from "../AnimatedContent/AnimatedContent";
+import GlareHover from "../GlareHover/GlareHover";
 
 const Skills = () => {
   return (
@@ -37,53 +38,151 @@ const Skills = () => {
         threshold={0.2}
         delay={0.3}
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 justify-center gap-2 md:gap-[45px] mt-[40px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 justify-center gap-2 md:gap-[45px] mt-[30px]">
           {/* card */}
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
-            <div>
-              <FaHtml5
-                color="#E34F26"
-                className="text-[40px] md:text-[130px]"
-              />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">HTML5</h1>
-          </div>
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
-            <div>
-              <RiTailwindCssFill color="#61dafb" className="text-[40px] md:text-[130px]" />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">Tailwind CSS</h1>
-          </div>
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
-            <div>
-              <IoLogoJavascript color="#F7DF1E" className="text-[40px] md:text-[130px]" />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">JavaScript</h1>
-          </div>
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
-            <div>
-              <FaReact color="#61dafb" className="text-[40px] md:text-[130px]" />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">React Developer</h1>
-          </div>
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
-            <div>
-              <FaGitAlt color="#F97316" className="text-[40px] md:text-[130px]" />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">Project Management</h1>
-          </div>
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px]">
-            <div>
-              <SiPytorch color="#F97316" className="text-[40px] md:text-[130px]" />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">PyTorch</h1>
-          </div>
-          <div className="bg-[#1C1C21] hover:bg-[#2D3240] h-[100px] md:h-[360px] p-[30px] w-full flex flex-col items-center justify-center rounded-[200px] col-span-2 md:col-span-1">
-            <div>
-              <SiNumpy color="#61dafb" className="text-[40px] md:text-[130px]" />
-            </div>
-            <h1 className="text-sm md:text-lg lg:text-2xl text-center">NumPy</h1>
-          </div>
+
+          {/* html5 */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <FaHtml5 color="#E34F26" className="text-[40px] md:text-[130px]" />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              HTML5
+            </h1>
+          </GlareHover>
+          {/* Tailwind  */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <RiTailwindCssFill
+              color="#61dafb"
+              className="text-[40px] md:text-[130px]"
+            />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              Tailwind CSS
+            </h1>
+          </GlareHover>
+          {/* JavaScript */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <IoLogoJavascript
+              color="#F7DF1E"
+              className="text-[40px] md:text-[130px]"
+            />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              JavaScript
+            </h1>
+          </GlareHover>
+          {/* React */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <FaReact color="#61dafb" className="text-[40px] md:text-[130px]" />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              React Developer
+            </h1>
+          </GlareHover>
+          {/* Git / Project Management */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <FaGitAlt color="#F97316" className="text-[40px] md:text-[130px]" />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              Project Management
+            </h1>
+          </GlareHover>
+          {/* PyTorch */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <SiPytorch
+              color="#EE4C2C"
+              className="text-[40px] md:text-[130px]"
+            />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              PyTorch
+            </h1>
+          </GlareHover>
+          {/* NumPy */}
+          <GlareHover
+            glareColor="#ffffff"
+            glareOpacity={0.3}
+            glareAngle={-30}
+            glareSize={300}
+            transitionDuration={800}
+            playOnce={false}
+            width="100%"
+            height="auto"
+            background="#1C1C21"
+            borderRadius="200px"
+            className="hover:bg-[#2D3240] flex flex-col items-center justify-center p-6 md:p-10"
+          >
+            <SiNumpy color="#013243" className="text-[40px] md:text-[130px]" />
+            <h1 className="text-sm md:text-lg lg:text-2xl text-center">
+              NumPy
+            </h1>
+          </GlareHover>
         </div>
       </AnimatedContent>
     </div>
