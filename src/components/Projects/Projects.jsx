@@ -43,7 +43,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="max-w-[1240px] mx-auto">
+    <div className="max-w-[1240px] mx-auto mt-[30px]">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -58,8 +58,8 @@ const Projects = () => {
       </div>
       {/* content  */}
       <div
-        style={{ height: "300px", position: "relative" }}
-        className="mt-[30px]"
+        style={{ position: "relative" }}
+        className="mt-[30px] h-[1100px] md:h-[600px] lg:h-[300px]"
       >
         <ChromaGrid
           items={items}
