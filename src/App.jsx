@@ -5,6 +5,7 @@ import Skills from "./components/Skills/Skills";
 import TechLogoBar from "./components/TechLogoBar/TechLogoBar";
 import Projects from "./components/Projects/Projects";
 import Reports from "./components/Reports/Reports";
+import Education from "./components/Education/Education";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Skills></Skills>
       <Projects></Projects>
       <Reports></Reports>
+      <Education></Education>
       <Footer></Footer>
 
     </>

@@ -3,20 +3,6 @@ import { FaHandsHelping, FaExternalLinkAlt } from "react-icons/fa";
 import ShinyText from "../ShinyText/ShinyText";
 import ElectricBorder from "../ElectricBorder/ElectricBorder";
 
-<ElectricBorder
-  color="#7df9ff"
-  speed={1}
-  chaos={0.5}
-  thickness={2}
-  style={{ borderRadius: 16 }}
->
-  <div>
-    <p style={{ margin: "6px 0 0", opacity: 0.8 }}>
-      A glowing, animated border wrapper.
-    </p>
-  </div>
-</ElectricBorder>;
-
 const Reports = () => {
   return (
     <div className="max-w-[1240px] mx-auto mt-[10px]">
@@ -29,7 +15,7 @@ const Reports = () => {
           <h3>What I have done</h3>
         </div>
         <h1 className="text-[30px] md:text-[48px] text-center font-bold">
-          My Reports
+          My Papers & Reports
         </h1>
       </div>
       {/* content  */}
