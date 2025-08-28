@@ -3,7 +3,7 @@ import ShinyText from "../ShinyText/ShinyText";
 
 const Navbar = () => {
   return (
-    <div className="bg-[#1d1c2291] text-center max-w-[1240px] mx-auto my-[20px] md:my-[50px] p-[32px] flex flex-col md:flex-row items-center justify-between rounded-lg">
+    <div className="bg-[#1d1c2291] text-center max-w-[1240px] mx-auto my-[20px] md:my-[50px] p-[32px] flex md:flex-row items-center justify-between rounded-lg">
       <div>
         <ShinyText
           text="Md. Samin Israk"
@@ -14,7 +14,7 @@ const Navbar = () => {
           textColor="white"
         />
       </div>
-      <div className="flex flex-col md:flex-row gap-3 md:gap-[40px] text-[#D9ECFF]">
+      <div className="hidden md:flex flex-col  md:flex-row gap-3 md:gap-[40px] text-[#D9ECFF]">
         <div>
           <h1>Work</h1>
         </div>

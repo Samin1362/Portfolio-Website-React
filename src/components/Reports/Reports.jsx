@@ -1,7 +1,11 @@
 import React from "react";
 import { FaHandsHelping, FaExternalLinkAlt } from "react-icons/fa";
 import ShinyText from "../ShinyText/ShinyText";
-import ElectricBorder from "../ElectricBorder/ElectricBorder";
+import StarBorder from "../StarBorder/StarBorder";
+
+<StarBorder as="button" className="custom-class" color="cyan" speed="5s">
+  // content
+</StarBorder>;
 
 const Reports = () => {
   return (
@@ -19,17 +23,10 @@ const Reports = () => {
         </h1>
       </div>
       {/* content  */}
-      <div className="p-3">
+      <div className="p-3 flex flex-col gap-2">
         {/* card  */}
-
         {/* report 1  */}
-        <ElectricBorder
-          color="#D3D3D3"
-          speed={1}
-          chaos={0.5}
-          thickness={2}
-          style={{ borderRadius: 16 }}
-        >
+        <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
               <h1 className="text-2xl font-bold">
@@ -37,8 +34,8 @@ const Reports = () => {
               </h1>
               <h2 className="font-bold">2025 - PRESENT</h2>
             </div>
-            <h2 className="font-bold">Project Lead</h2>
-            <p>
+            <h2 className="font-bold text-left">Project Lead</h2>
+            <p className="text-left">
               The project applies advanced machine learning models like AlexNet,
               ResNet, and Vision Transformers to classify digital artworks from
               the WikiArt dataset across 21 distinct art styles, with
@@ -56,16 +53,9 @@ const Reports = () => {
               />
             </div>
           </div>
-        </ElectricBorder>
-
+        </StarBorder>
         {/* report 2  */}
-        <ElectricBorder
-          color="#D3D3D3"
-          speed={1}
-          chaos={0.5}
-          thickness={2}
-          style={{ borderRadius: 16 }}
-        >
+        <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
               <h1 className="text-2xl font-bold">
@@ -73,8 +63,8 @@ const Reports = () => {
               </h1>
               <h2 className="font-bold">2024 - 2025</h2>
             </div>
-            <h2 className="font-bold">Project Lead</h2>
-            <p>
+            <h2 className="font-bold text-left">Project Lead</h2>
+            <p className="text-left">
               The project uses DensePose from Detectron2 to automate body
               measurements, improving accuracy over traditional methods. Testing
               on 20 individuals showed a mean absolute error (MAE) of 0.62 cm,
@@ -93,16 +83,9 @@ const Reports = () => {
               />
             </div>
           </div>
-        </ElectricBorder>
-
+        </StarBorder>
         {/* report 3  */}
-        <ElectricBorder
-          color="#D3D3D3"
-          speed={1}
-          chaos={0.5}
-          thickness={2}
-          style={{ borderRadius: 16 }}
-        >
+        <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
               <h1 className="text-2xl font-bold">
@@ -110,8 +93,8 @@ const Reports = () => {
               </h1>
               <h2 className="font-bold">2024</h2>
             </div>
-            <h2 className="font-bold">Project Lead</h2>
-            <p>
+            <h2 className="font-bold text-left">Project Lead</h2>
+            <p className="text-left">
               The project aims to predict CVDs to help patients assess their
               heart health, using a dataset from Mendeley Data and applying
               SMOTE for balancing. After training six models, the Support Vector
@@ -131,26 +114,20 @@ const Reports = () => {
               />
             </div>
           </div>
-        </ElectricBorder>
-
+        </StarBorder>
         {/* report 4  */}
-                <ElectricBorder
-          color="#D3D3D3"
-          speed={1}
-          chaos={0.5}
-          thickness={2}
-          style={{ borderRadius: 16 }}
-        >
+        <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
               <h1 className="text-2xl font-bold">
-                MerakiNexus AI-Driven Creativity Secured by DeFi {" "}
+                MerakiNexus AI-Driven Creativity Secured by DeFi{" "}
               </h1>
               <h2 className="font-bold">2025</h2>
             </div>
-            <h2 className="font-bold">Project Lead</h2>
-            <p>
-              Blockchain-based e-commerce site where people will be able to bring their artistic creativity into reality.
+            <h2 className="font-bold text-left">Project Lead</h2>
+            <p className="text-left">
+              Blockchain-based e-commerce site where people will be able to
+              bring their artistic creativity into reality.
             </p>
             <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
               <FaExternalLinkAlt className="text-black" />
@@ -164,8 +141,7 @@ const Reports = () => {
               />
             </div>
           </div>
-        </ElectricBorder>
-
+        </StarBorder>
       </div>
     </div>
   );
