@@ -8,18 +8,22 @@ import Reports from "./components/Reports/Reports";
 import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import { useRef } from "react";
 
 function App() {
+
+  const contactRef = useRef(null);
+
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar contactRef={contactRef}></Navbar>
       <Banner></Banner>
       <TechLogoBar></TechLogoBar>
       <Skills></Skills>
       <Projects></Projects>
       <Reports></Reports>
       <Education></Education>
-      <Contact></Contact>
+      <Contact ref={contactRef}></Contact>
       <Footer></Footer>
     </>
   );
