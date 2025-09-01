@@ -5,9 +5,10 @@ import ShinyText from "../ShinyText/ShinyText";
 import { FaDownload } from "react-icons/fa6";
 import TiltedCard from "../TiltedCard/TiltedCard";
 
-const Banner = () => {
+const Banner = ({ allContentLoading }) => {
   return (
     <div
+      ref={allContentLoading}
       className="relative text-white w-full max-w-[1240px] mx-auto overflow-hidden rounded-lg"
       // style={{ minHeight: "100vh" }}
     >
