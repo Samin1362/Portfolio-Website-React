@@ -41,17 +41,19 @@ const Reports = () => {
               the WikiArt dataset across 21 distinct art styles, with
               EfficientNet yielding the best results.
             </p>
-            <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
-              <FaExternalLinkAlt className="text-black" />
-              <ShinyText
-                text="View Report"
-                disabled={false}
-                speed={3}
-                className="custom-class"
-                size={14}
-                textColor="black"
-              />
-            </div>
+            <a target="_blank" href="https://www.linkedin.com/feed/update/urn:li:activity:7283766125438418944/">
+              <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
+                <FaExternalLinkAlt className="text-black" />
+                <ShinyText
+                  text="View Report"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                  size={14}
+                  textColor="black"
+                />
+              </div>
+            </a>
           </div>
         </StarBorder>
         {/* report 2  */}
