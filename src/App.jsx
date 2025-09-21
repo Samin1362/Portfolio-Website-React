@@ -10,6 +10,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Events from "./components/Events/Events";
 
 function App() {
   const contactRef = useRef(null);
@@ -37,6 +38,7 @@ function App() {
       <Projects></Projects>
       <Reports></Reports>
       <Education></Education>
+      <Events></Events>
       <Contact ref={contactRef}></Contact>
       <Footer></Footer>
     </>
