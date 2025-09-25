@@ -28,24 +28,24 @@ const sampleEvents = [
   },
   {
     id: 2,
-    title: "MerakiNexus – AI-Powered Art Valuation & Decentralized Marketplace",
-    date: "September 26, 2025",
-    time: "8:00 AM - 6:30 PM",
+    title: "BizPilot: AI Co-Pilot for Entrepreneurs",
+    date: "September 24, 2025",
+    time: "9:00 AM - 3:00 PM",
     location: "Bangladesh University of Professionals (BUP), Dhaka, Bangladesh",
     role: "Project Lead",
-    teamName: "Team MerakiNexus",
+    teamName: "Team Art Nexus",
     shortDescription:
-      "Where art meets AI — evaluating, curating, and preserving creativity with intelligence.",
+      "AI-powered assistant that helps entrepreneurs turn ideas into businesses with smart strategies, automation, and growth optimization.",
     fullDescription:
-      "Meraki Nexus is an AI-powered platform that blends art, creativity, and technology to evaluate, curate, and preserve the true value of artwork. By analyzing visual features and leveraging Web3 for decentralized collection, it empowers artists and audiences to connect through meaningful, data-driven insights.",
+      "BizPilot is an AI-powered web application that empowers entrepreneurs to transform raw ideas into sustainable businesses by providing end-to-end support—from ideation and go-to-market strategies to supply chain optimization, predictive production forecasting, and adaptive growth scaling. Acting as a virtual business consultant, BizPilot delivers personalized step-by-step guidance, real-time simulations, and intelligent automation to help small businesses thrive. Premium features unlock enhanced AI models, in-depth analytics, and autonomous workflows, making BizPilot a powerful co-pilot for every stage of entrepreneurial growth.",
     cardImage:
       "https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/549924440_1212117024296222_9201450450104943182_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG4beYyEv7kMQRDp7T-L5ibQz4ex6QHbelDPh7HpAdt6bzvIIEZznBmFA5E7u79g2HTPTLcR9YYyT8O-E0qvBzB&_nc_ohc=qsnkb7uZufcQ7kNvwG4DD8l&_nc_oc=AdlPjtOFpjKqmoud_ZcvGbEo7JwA2EpZdCS7CnTxzYo_HWM5TOKC9Wz8o_kgzgdytZI&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=JjrT1Jn2JHh1d1jlvEbTdQ&oh=00_Afazmrd6Xduq5xK5AMv0VVTyOuBAZvT0_HDJ4_K1ueNVtA&oe=68D5439D",
     modalImage:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=60",
+      "https://i.postimg.cc/6QgHBqxV/temp-Imagef09li-U.avif",
     category: "hackathon",
-    status: "Upcoming",
-    achievements: ["Participation Award", "Featured in Tech Newsletter"],
-    link: "#",
+    status: "Completed",
+    achievements: ["Participation Award", "Featured in Tech Newsletter", "Top 10 out of 80 teams"],
+    link: "https://i.postimg.cc/Hs6VJ7vg/Gmail-Thank-You-for-Your-Participation-in-BUP-CSE-Tech-Carnival-Hackathon-2025.png",
   },
 ];
 
@@ -308,7 +308,7 @@ const Events = () => {
           <h3>My Professional Journey</h3>
         </div>
         <h1 className="text-[30px] md:text-[48px] font-bold">
-          Events & Speaking Engagements
+          Events & Speaking Engagements (Click to View)
         </h1>
         <p className="text-[#D9ECFF] mt-2 max-w-2xl mx-auto">
           Conferences, workshops, and symposiums where I've shared knowledge and
