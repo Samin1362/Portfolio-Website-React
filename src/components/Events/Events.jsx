@@ -39,7 +39,7 @@ const sampleEvents = [
     fullDescription:
       "BizPilot is an AI-powered web application that empowers entrepreneurs to transform raw ideas into sustainable businesses by providing end-to-end support—from ideation and go-to-market strategies to supply chain optimization, predictive production forecasting, and adaptive growth scaling. Acting as a virtual business consultant, BizPilot delivers personalized step-by-step guidance, real-time simulations, and intelligent automation to help small businesses thrive. Premium features unlock enhanced AI models, in-depth analytics, and autonomous workflows, making BizPilot a powerful co-pilot for every stage of entrepreneurial growth.",
     cardImage:
-      "https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/549924440_1212117024296222_9201450450104943182_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeG4beYyEv7kMQRDp7T-L5ibQz4ex6QHbelDPh7HpAdt6bzvIIEZznBmFA5E7u79g2HTPTLcR9YYyT8O-E0qvBzB&_nc_ohc=qsnkb7uZufcQ7kNvwG4DD8l&_nc_oc=AdlPjtOFpjKqmoud_ZcvGbEo7JwA2EpZdCS7CnTxzYo_HWM5TOKC9Wz8o_kgzgdytZI&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=JjrT1Jn2JHh1d1jlvEbTdQ&oh=00_Afazmrd6Xduq5xK5AMv0VVTyOuBAZvT0_HDJ4_K1ueNVtA&oe=68D5439D",
+      "https://i.postimg.cc/66hV9GQc/temp-Image2a65k-Y.avif",
     modalImage:
       "https://i.postimg.cc/6QgHBqxV/temp-Imagef09li-U.avif",
     category: "hackathon",
