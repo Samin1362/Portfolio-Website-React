@@ -20,7 +20,7 @@ const Projects = () => {
       handle: "@react",
       borderColor: "#1E3A8A",
       gradient: "linear-gradient(145deg, #1E3A8A, #10B981, #0D9488)",
-      url: "https://bizpilot47.netlify.app",
+      url: "https://silver-pixie-86b386.netlify.app",
     },
     {
       image: "https://i.postimg.cc/Hk15Js4H/temp-Image-L0-Kewf.avif",
