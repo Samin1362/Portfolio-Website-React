@@ -38,14 +38,39 @@ const sampleEvents = [
       "AI-powered assistant that helps entrepreneurs turn ideas into businesses with smart strategies, automation, and growth optimization.",
     fullDescription:
       "BizPilot is an AI-powered web application that empowers entrepreneurs to transform raw ideas into sustainable businesses by providing end-to-end support—from ideation and go-to-market strategies to supply chain optimization, predictive production forecasting, and adaptive growth scaling. Acting as a virtual business consultant, BizPilot delivers personalized step-by-step guidance, real-time simulations, and intelligent automation to help small businesses thrive. Premium features unlock enhanced AI models, in-depth analytics, and autonomous workflows, making BizPilot a powerful co-pilot for every stage of entrepreneurial growth.",
-    cardImage:
-      "https://i.postimg.cc/66hV9GQc/temp-Image2a65k-Y.avif",
-    modalImage:
-      "https://i.postimg.cc/6QgHBqxV/temp-Imagef09li-U.avif",
+    cardImage: "https://i.postimg.cc/66hV9GQc/temp-Image2a65k-Y.avif",
+    modalImage: "https://i.postimg.cc/6QgHBqxV/temp-Imagef09li-U.avif",
     category: "hackathon",
     status: "Completed",
-    achievements: ["Participation Award", "Featured in Tech Newsletter", "Top 10 out of 80 teams"],
+    achievements: [
+      "Participation Award",
+      "Featured in Tech Newsletter",
+      "Top 10 out of 80 teams",
+    ],
     link: "https://i.postimg.cc/Hs6VJ7vg/Gmail-Thank-You-for-Your-Participation-in-BUP-CSE-Tech-Carnival-Hackathon-2025.png",
+  },
+  {
+    id: 3,
+    title: "TypeRacer: Competitive Typing Challenge",
+    date: "Ongoing",
+    time: "Anytime",
+    location: "Online",
+    role: "Participant",
+    teamName: "Solo",
+    shortDescription:
+      "Competitive typing game that measures speed and accuracy in real-time races against global players.",
+    fullDescription:
+      "TypeRacer is an online multiplayer typing competition where players race by typing passages of text as quickly and accurately as possible. It provides a fun yet challenging environment to practice typing, improve speed, and compete against friends or global opponents. With detailed performance statistics and progress tracking, TypeRacer helps users enhance their typing proficiency while engaging in a dynamic and competitive community.",
+    cardImage: "https://i.postimg.cc/nLrVnG6m/temp-Image-IYV2-Qt.avif",
+    modalImage: "https://data.typeracer.com/misc/badge?user=samin1362",
+    category: "personal-achievement",
+    status: "Active",
+    achievements: [
+      "Consistent practice and improvement",
+      "Global multiplayer participation",
+      "Typing speed and accuracy milestones",
+    ],
+    link: "https://data.typeracer.com/pit/profile?user=samin1362&ref=badge",
   },
 ];
 
