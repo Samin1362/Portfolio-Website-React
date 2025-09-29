@@ -9,7 +9,7 @@ import StarBorder from "../StarBorder/StarBorder";
 
 const Reports = () => {
   return (
-    <div className="max-w-[1240px] mx-auto mt-[260px]">
+    <div className="max-w-[1240px] mx-auto mt-[520px] md:mt-[260px]">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -29,7 +29,7 @@ const Reports = () => {
         <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-2xl text-left font-bold">
                 Deep Learning for Artwork Classification{" "}
               </h1>
               <h2 className="font-bold">2025 - PRESENT</h2>
@@ -60,7 +60,7 @@ const Reports = () => {
         <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-2xl text-left font-bold">
                 Automated Body Measurement Using DensePose.{" "}
               </h1>
               <h2 className="font-bold">2024 - 2025</h2>
@@ -90,7 +90,7 @@ const Reports = () => {
         <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-2xl text-left font-bold">
                 Cardiovascular Disease Prediction using Machine Learning{" "}
               </h1>
               <h2 className="font-bold">2024</h2>
@@ -121,7 +121,7 @@ const Reports = () => {
         <StarBorder as="div" className="custom-class" color="white" speed="5s">
           <div className="p-4 mb-3 flex flex-col gap-2">
             <div className="flex justify-between">
-              <h1 className="text-2xl font-bold">
+              <h1 className="text-2xl text-left font-bold">
                 MerakiNexus AI-Driven Creativity Secured by DeFi{" "}
               </h1>
               <h2 className="font-bold">2025</h2>
