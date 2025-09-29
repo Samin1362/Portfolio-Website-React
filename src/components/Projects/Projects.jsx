@@ -5,6 +5,24 @@ import ChromaGrid from "../ChromaGrid/ChromaGrid";
 const Projects = () => {
   const items = [
     {
+      image: "https://i.postimg.cc/qv4p6q04/temp-Image-VQdn-IE.avif",
+      title: "React + Tailwind",
+      subtitle: "Frontend Project",
+      handle: "@react",
+      borderColor: "#7C3AED",
+      gradient: "linear-gradient(145deg, #6D28D9, #1E1B4B)",
+      url: "https://merakinexus.netlify.app",
+    },
+    {
+      image: "https://i.postimg.cc/x8BcS2bV/temp-Imagev5-E4bh.avif",
+      title: "React Project",
+      subtitle: "AI Assistant for Entrepreneurs",
+      handle: "@react",
+      borderColor: "#1E3A8A",
+      gradient: "linear-gradient(145deg, #1E3A8A, #10B981, #0D9488)",
+      url: "https://bizpilot47.netlify.app",
+    },
+    {
       image: "https://i.postimg.cc/Hk15Js4H/temp-Image-L0-Kewf.avif",
       title: "React Project",
       subtitle: "Frontend Project",
