@@ -9,7 +9,7 @@ import StarBorder from "../StarBorder/StarBorder";
 
 const Reports = () => {
   return (
-    <div className="max-w-[1240px] mx-auto mt-[10px]">
+    <div className="max-w-[1240px] mx-auto mt-[260px]">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
