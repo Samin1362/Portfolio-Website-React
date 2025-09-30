@@ -24,7 +24,7 @@ const sampleEvents = [
     category: "hackathon",
     status: "Completed",
     achievements: ["Participation Award", "Featured in Tech Newsletter"],
-    link: "https://scontent.fdac138-2.fna.fbcdn.net/v/t39.30808-6/548026692_1209413641233227_2816913180618712004_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGD19iEiJmUBj46qKVcS2KfOSbx8w715eQ5JvHzDvXl5On0s-zwDCrcc4hBqiLQ47P9mjEbMpgSpMaj5e9epnkj&_nc_ohc=_Rfph1dyVlYQ7kNvwFl9RaX&_nc_oc=Adnqfkb022yrg57nM4jpZBLKHbKb4VplfKLnQhd9eK2o4Rq0Maq7P5SgR4fkkvMp4N8&_nc_zt=23&_nc_ht=scontent.fdac138-2.fna&_nc_gid=y8Xx7MSBfatCpVWIxXYNjQ&oh=00_AfZNTl0g_SyYGKG8G4TPDAt-RB5nFjho-mWIycPVxmGYbQ&oe=68D5240A",
+    link: "https://i.postimg.cc/zBKLNGYd/temp-Image3-AWKDJ.avif",
   },
   {
     id: 2,
