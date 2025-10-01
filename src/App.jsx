@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
+import FloatingNavbar from "./components/FloatingNavbar/FloatingNavbar";
 import Banner from "./components/Banner/Banner";
 import Skills from "./components/Skills/Skills";
 import TechLogoBar from "./components/TechLogoBar/TechLogoBar";
@@ -43,6 +44,14 @@ function App() {
         reportsRef={reportsRef}
         educationRef={educationRef}
         eventsRef={eventsRef}
+      />
+      <FloatingNavbar
+        skillsRef={skillsRef}
+        projectsRef={projectsRef}
+        reportsRef={reportsRef}
+        educationRef={educationRef}
+        eventsRef={eventsRef}
+        contactRef={contactRef}
       />
       <Banner allContentLoading={allContentLoading}></Banner>
       <TechLogoBar></TechLogoBar>
