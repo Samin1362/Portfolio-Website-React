@@ -14,9 +14,14 @@ import Events from "./components/Events/Events";
 
 function App() {
   const contactRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const reportsRef = useRef(null);
+  const educationRef = useRef(null);
+  const eventsRef = useRef(null);
   const allContentLoading = useRef(null);
 
-  // content loading animation 
+  // content loading animation
   useEffect(() => {
     gsap.fromTo(
       allContentLoading.current,
@@ -31,14 +36,21 @@ function App() {
 
   return (
     <>
-      <Navbar contactRef={contactRef}></Navbar>
+      <Navbar
+        contactRef={contactRef}
+        skillsRef={skillsRef}
+        projectsRef={projectsRef}
+        reportsRef={reportsRef}
+        educationRef={educationRef}
+        eventsRef={eventsRef}
+      />
       <Banner allContentLoading={allContentLoading}></Banner>
       <TechLogoBar></TechLogoBar>
-      <Skills></Skills>
-      <Projects></Projects>
-      <Reports></Reports>
-      <Education></Education>
-      <Events></Events>
+      <Skills ref={skillsRef}></Skills>
+      <Projects ref={projectsRef}></Projects>
+      <Reports ref={reportsRef}></Reports>
+      <Education ref={educationRef}></Education>
+      <Events ref={eventsRef}></Events>
       <Contact ref={contactRef}></Contact>
       <Footer></Footer>
     </>
