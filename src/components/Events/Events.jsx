@@ -75,7 +75,7 @@ const sampleEvents = [
 ];
 
 // EventCard Component
-const EventCard = ({ event, onClick }) => {
+const EventCard = ({ event, handleEventClick }) => {
   const isUpcoming = event.status === "Upcoming";
 
   return (
@@ -88,71 +88,133 @@ const EventCard = ({ event, onClick }) => {
     >
       <GlareHover
         glareColor="#ffffff"
-        glareOpacity={0.2}
+        glareOpacity={0.15}
         glareAngle={-30}
-        glareSize={200}
-        transitionDuration={600}
+        glareSize={300}
+        transitionDuration={800}
         playOnce={false}
         width="100%"
         height="auto"
         background="transparent"
-        borderRadius="12px"
-        className="cursor-pointer"
+        borderRadius="16px"
+        className="cursor-pointer h-full"
       >
-        <div
-          onClick={() => onClick(event)}
-          className={`bg-[#1C1C21] border-2 ${
-            isUpcoming ? "border-blue-500" : "border-gray-600"
-          } rounded-lg p-4 hover:bg-[#2D3240] transition-all duration-300 transform hover:scale-105`}
-        >
-          {/* Event Image */}
-          <div className="relative overflow-hidden rounded-lg mb-4">
-            <img
-              src={event.cardImage}
-              alt={event.title}
-              className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-            />
-            <div
-              className={`absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-semibold ${
-                isUpcoming
-                  ? "bg-blue-500 text-white"
-                  : "bg-green-500 text-white"
-              }`}
-            >
-              {event.status}
-            </div>
-            <div className="absolute bottom-2 left-2 bg-black bg-opacity-70 px-2 py-1 rounded text-xs text-white">
-              {event.category}
-            </div>
-          </div>
+        <div className="relative group h-full">
+          {/* Background gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-          {/* Event Details */}
-          <div className="space-y-2">
-            <h3 className="text-lg font-bold text-white line-clamp-2">
-              {event.title}
-            </h3>
+          {/* Main card container */}
+          <div
+            className={`relative bg-gradient-to-br from-[#1C1C21] via-[#1E1E26] to-[#1A1A20] border-2 ${
+              isUpcoming
+                ? "border-blue-500/50 shadow-blue-500/20"
+                : "border-gray-600/50 shadow-gray-500/10"
+            } rounded-2xl p-6 hover:border-opacity-80 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 shadow-2xl hover:shadow-3xl backdrop-blur-sm h-full flex flex-col`}
+          >
+            {/* Decorative corner elements */}
+            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+            <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-cyan-500/20 to-blue-500/20 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
 
-            <div className="flex items-center gap-2 text-[#D9ECFF] text-sm">
-              <Calendar size={14} />
-              <span>{event.date}</span>
-            </div>
+            {/* Event Image */}
+            <div className="relative overflow-hidden rounded-xl mb-6 shadow-lg">
+              <img
+                src={event.cardImage}
+                alt={event.title}
+                className="w-full h-52 object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+              />
 
-            <div className="flex items-center gap-2 text-[#D9ECFF] text-sm">
-              <MapPin size={14} />
-              <span>{event.location}</span>
-            </div>
+              {/* Image overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-            <div className="flex items-center gap-2 text-[#D9ECFF] text-sm">
-              <Clock size={14} />
-              <span>{event.time}</span>
+              {/* Status badge */}
+              <div
+                className={`absolute top-3 right-3 px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-md border ${
+                  isUpcoming
+                    ? "bg-blue-500/90 text-white border-blue-400/50 shadow-blue-500/30"
+                    : "bg-green-500/90 text-white border-green-400/50 shadow-green-500/30"
+                } shadow-lg`}
+              >
+                {event.status}
+              </div>
+
+              {/* Category badge */}
+              <div className="absolute bottom-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full text-xs text-white font-medium border border-white/20">
+                {event.category}
+              </div>
             </div>
 
-            <p className="text-gray-300 text-sm line-clamp-2 mt-2">
-              {event.shortDescription}
-            </p>
+            {/* Event Details */}
+            <div className="space-y-4 flex-grow">
+              <h3 className="text-xl font-bold text-white line-clamp-2 group-hover:text-blue-100 transition-colors duration-300">
+                {event.title}
+              </h3>
 
-            <div className="mt-3 px-3 py-1 bg-[#282732] rounded-full text-xs text-[#D9ECFF] w-fit">
-              {event.role}
+              {/* Event info with enhanced styling */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-[#D9ECFF] text-sm">
+                  <div className="p-1.5 bg-blue-500/20 rounded-lg">
+                    <Calendar size={14} className="text-blue-400" />
+                  </div>
+                  <span className="font-medium">{event.date}</span>
+                </div>
+
+                <div className="flex items-center gap-3 text-[#D9ECFF] text-sm">
+                  <div className="p-1.5 bg-red-500/20 rounded-lg">
+                    <MapPin size={14} className="text-red-400" />
+                  </div>
+                  <span className="font-medium line-clamp-1">
+                    {event.location}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-[#D9ECFF] text-sm">
+                  <div className="p-1.5 bg-green-500/20 rounded-lg">
+                    <Clock size={14} className="text-green-400" />
+                  </div>
+                  <span className="font-medium">{event.time}</span>
+                </div>
+              </div>
+
+              <p className="text-gray-300 text-sm line-clamp-3 leading-relaxed">
+                {event.shortDescription}
+              </p>
+
+              {/* Role badge */}
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#282732] to-[#2A2A35] rounded-full text-sm text-[#D9ECFF] font-medium border border-gray-600/30">
+                {event.role}
+              </div>
+            </div>
+
+            {/* View Details Button - positioned at bottom */}
+            <div className="mt-6 pt-4 border-t border-gray-700/50">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEventClick(event);
+                }}
+                className="w-full bg-gradient-to-r from-[#EBF3FA] to-[#D6E8F5] hover:from-[#D6E8F5] hover:to-[#C1D9F0] text-black font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] flex items-center justify-center gap-2 group/btn"
+              >
+                <ShinyText
+                  text="View Details"
+                  disabled={false}
+                  speed={3}
+                  size={14}
+                  textColor="black"
+                />
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -333,7 +395,7 @@ const Events = () => {
           <h3>My Professional Journey</h3>
         </div>
         <h1 className="text-[30px] md:text-[48px] font-bold">
-          Events & Speaking Engagements (Click to View)
+          Events & Speaking Engagements
         </h1>
         <p className="text-[#D9ECFF] mt-2 max-w-2xl mx-auto">
           Conferences, workshops, and symposiums where I've shared knowledge and
@@ -342,9 +404,13 @@ const Events = () => {
       </div>
 
       {/* Events Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 auto-rows-fr">
         {sampleEvents.map((event) => (
-          <EventCard key={event.id} event={event} onClick={handleEventClick} />
+          <EventCard
+            key={event.id}
+            event={event}
+            handleEventClick={handleEventClick}
+          />
         ))}
       </div>
 
