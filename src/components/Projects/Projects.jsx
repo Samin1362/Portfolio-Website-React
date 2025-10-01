@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { FaHandsHelping } from "react-icons/fa";
 import ChromaGrid from "../ChromaGrid/ChromaGrid";
 
-const Projects = () => {
+const Projects = forwardRef((props, ref) => {
   const items = [
     {
       image: "https://i.postimg.cc/qv4p6q04/temp-Image-VQdn-IE.avif",
@@ -61,7 +61,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="max-w-[1240px] mx-auto mt-[30px]">
+    <div ref={ref} className="max-w-[1240px] mx-auto mt-[30px]">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -89,6 +89,8 @@ const Projects = () => {
       </div>
     </div>
   );
-};
+});
+
+Projects.displayName = "Projects";
 
 export default Projects;

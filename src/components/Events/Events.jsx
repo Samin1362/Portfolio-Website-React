@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import { Calendar, MapPin, Clock, X, CheckCircle } from "lucide-react";
 import { FaCalendarAlt } from "react-icons/fa";
 import AnimatedContent from "../AnimatedContent/AnimatedContent";
@@ -368,7 +368,7 @@ const EventModal = ({ event, isOpen, onClose, onShowConfirmation }) => {
 };
 
 // Main Events Component
-const Events = () => {
+const Events = forwardRef((props, ref) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -387,7 +387,7 @@ const Events = () => {
   };
 
   return (
-    <div className="max-w-[1240px] mx-auto mt-[30px] px-4">
+    <div ref={ref} className="max-w-[1240px] mx-auto mt-[30px] px-4">
       {/* Section Header */}
       <div className="text-center mb-8">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px] mb-4">
@@ -423,6 +423,8 @@ const Events = () => {
       />
     </div>
   );
-};
+});
+
+Events.displayName = "Events";
 
 export default Events;

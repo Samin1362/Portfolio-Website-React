@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { FaHandsHelping, FaExternalLinkAlt } from "react-icons/fa";
 import ShinyText from "../ShinyText/ShinyText";
 import StarBorder from "../StarBorder/StarBorder";
@@ -7,9 +7,9 @@ import StarBorder from "../StarBorder/StarBorder";
   // content
 </StarBorder>;
 
-const Reports = () => {
+const Reports = forwardRef((props, ref) => {
   return (
-    <div className="max-w-[1240px] mx-auto mt-[520px] md:mt-[260px]">
+    <div ref={ref} className="max-w-[1240px] mx-auto mt-[520px] md:mt-[260px]">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -41,7 +41,10 @@ const Reports = () => {
               the WikiArt dataset across 21 distinct art styles, with
               EfficientNet yielding the best results.
             </p>
-            <a target="_blank" href="https://www.linkedin.com/feed/update/urn:li:activity:7283766125438418944/">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7283766125438418944/"
+            >
               <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
                 <FaExternalLinkAlt className="text-black" />
                 <ShinyText
@@ -147,6 +150,8 @@ const Reports = () => {
       </div>
     </div>
   );
-};
+});
+
+Reports.displayName = "Reports";
 
 export default Reports;

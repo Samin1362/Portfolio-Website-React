@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { FaHandsHelping } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
@@ -10,9 +10,9 @@ import { SiNumpy } from "react-icons/si";
 import AnimatedContent from "../AnimatedContent/AnimatedContent";
 import GlareHover from "../GlareHover/GlareHover";
 
-const Skills = () => {
+const Skills = forwardRef((props, ref) => {
   return (
-    <div className="max-w-[1240px] mx-auto">
+    <div ref={ref} className="max-w-[1240px] mx-auto">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -187,6 +187,8 @@ const Skills = () => {
       </AnimatedContent>
     </div>
   );
-};
+});
+
+Skills.displayName = "Skills";
 
 export default Skills;

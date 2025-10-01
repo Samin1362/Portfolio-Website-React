@@ -3,9 +3,25 @@ import { Menu, X } from "lucide-react";
 import ShinyText from "../ShinyText/ShinyText";
 import gsap from "gsap";
 
-const Navbar = ({ contactRef }) => {
+const Navbar = ({
+  contactRef,
+  skillsRef,
+  projectsRef,
+  reportsRef,
+  educationRef,
+  eventsRef,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const mobileContent = useRef(null);
+
+  // Navigation items
+  const navItems = [
+    { name: "Skills", ref: skillsRef },
+    { name: "Projects", ref: projectsRef },
+    { name: "Reports", ref: reportsRef },
+    { name: "Education", ref: educationRef },
+    { name: "Events", ref: eventsRef },
+  ];
 
   useEffect(() => {
     if (isOpen && mobileContent.current) {
@@ -18,9 +34,17 @@ const Navbar = ({ contactRef }) => {
     }
   }, [isOpen]);
 
+  const handleNavClick = (ref) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Close mobile menu if open
+    }
+  };
+
   const handleContactClick = () => {
     if (contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Close mobile menu if open
     }
   };
 
@@ -37,23 +61,20 @@ const Navbar = ({ contactRef }) => {
             textColor="white"
           />
         </div>
-        <div className="hidden md:flex flex-col  md:flex-row gap-3 md:gap-[40px] text-[#D9ECFF]">
-          <div>
-            <h1>Work</h1>
-          </div>
-          <div>
-            <h1>Skills</h1>
-          </div>
-          <div>
-            <h1>Experience</h1>
-          </div>
-          <div>
-            <h1>Testimonials</h1>
-          </div>
+        <div className="hidden md:flex flex-col md:flex-row gap-3 md:gap-[40px] text-[#D9ECFF]">
+          {navItems.map((item) => (
+            <div
+              key={item.name}
+              onClick={() => handleNavClick(item.ref)}
+              className="cursor-pointer hover:text-white transition-colors duration-300 font-medium"
+            >
+              <h1>{item.name}</h1>
+            </div>
+          ))}
         </div>
         <div
           onClick={() => handleContactClick()}
-          className="bg-[#EBF3FA] hidden md:flex mt-2 md:mt-0 px-[24px] py-3 text-center rounded-lg"
+          className="bg-[#EBF3FA] hidden md:flex mt-2 md:mt-0 px-[24px] py-3 text-center rounded-lg cursor-pointer hover:bg-opacity-90 transition-all duration-300"
         >
           <ShinyText
             text="Contact"
@@ -77,23 +98,20 @@ const Navbar = ({ contactRef }) => {
           ref={mobileContent}
           className="absolute right-2 top-[100px] md:hidden z-10 text-white bg-[#1d1c22] px-6 py-3 pb-4 max-w-[200px] rounded-lg"
         >
-          <div className=" md:flex flex-col  md:flex-row gap-3 md:gap-[40px] text-[#D9ECFF]">
-            <div>
-              <h1>Work</h1>
-            </div>
-            <div>
-              <h1>Skills</h1>
-            </div>
-            <div>
-              <h1>Experience</h1>
-            </div>
-            <div>
-              <h1>Testimonials</h1>
-            </div>
+          <div className="md:flex flex-col md:flex-row gap-3 md:gap-[40px] text-[#D9ECFF]">
+            {navItems.map((item) => (
+              <div
+                key={item.name}
+                onClick={() => handleNavClick(item.ref)}
+                className="cursor-pointer hover:text-white transition-colors duration-300 font-medium py-2"
+              >
+                <h1>{item.name}</h1>
+              </div>
+            ))}
           </div>
           <div
             onClick={() => handleContactClick()}
-            className="bg-[#EBF3FA] md:flex mt-2 md:mt-0 px-[24px] py-3 text-center rounded-lg"
+            className="bg-[#EBF3FA] md:flex mt-2 md:mt-0 px-[24px] py-3 text-center rounded-lg cursor-pointer hover:bg-opacity-90 transition-all duration-300"
           >
             <ShinyText
               text="Contact"
