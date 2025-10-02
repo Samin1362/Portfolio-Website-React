@@ -2,7 +2,7 @@ import React from "react";
 import profileImg from "../../assets/cv-image-dark.jpg";
 import Galaxy from "../Galaxy/Galaxy";
 import ShinyText from "../ShinyText/ShinyText";
-import { FaDownload } from "react-icons/fa6";
+import { FaDownload, FaGithub } from "react-icons/fa6";
 import TiltedCard from "../TiltedCard/TiltedCard";
 
 const Banner = ({ allContentLoading }) => {
@@ -48,16 +48,31 @@ const Banner = ({ allContentLoading }) => {
             developer with strong skills in modern UI/UX and hands-on experience
             in machine learning projects.
           </p>
-          <div className="bg-[#EBF3FA] px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
-            <FaDownload className="text-black hover:text-green-800" />
-            <ShinyText
-              text="Download CV"
-              disabled={false}
-              speed={3}
-              className="custom-class"
-              size={14}
-              textColor="black"
-            />
+          <div className="flex gap-2">
+            <div className="bg-[#EBF3FA] hover:bg-white px-4 py-2 w-fit text-center flex items-center gap-2 rounded-lg">
+              <FaDownload className="text-black hover:text-green-800" />
+              <ShinyText
+                text="Download CV"
+                disabled={false}
+                speed={3}
+                className="custom-class"
+                size={14}
+                textColor="black"
+              />
+            </div>
+            <a href="https://github.com/Samin1362" target="_blank">
+              <div className="bg-[#EBF3FA] hover:bg-white px-4 py-2 text-center flex items-center gap-2 rounded-lg">
+                <FaGithub className="text-black hover:text-black" />
+                <ShinyText
+                  text="Github"
+                  disabled={false}
+                  speed={3}
+                  className="custom-class"
+                  size={14}
+                  textColor="black"
+                />
+              </div>
+            </a>
           </div>
         </div>
 
