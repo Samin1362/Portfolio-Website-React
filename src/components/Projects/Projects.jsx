@@ -23,6 +23,15 @@ const Projects = forwardRef((props, ref) => {
       url: "https://silver-pixie-86b386.netlify.app",
     },
     {
+      image: "https://i.postimg.cc/Ss0tjyjb/temp-Imagevdm3v-F.avif",
+      title: "Firebase + React",
+      subtitle: "Game Hub for Gammers",
+      handle: "@firebase",
+      borderColor: "#8B5CF6",
+      gradient: "linear-gradient(145deg, #1E1B4B, #8B5CF6, #EC4899)",
+      url: "https://game-store-firebase-auth.web.app",
+    },
+    {
       image: "https://i.postimg.cc/Hk15Js4H/temp-Image-L0-Kewf.avif",
       title: "React Project",
       subtitle: "Frontend Project",

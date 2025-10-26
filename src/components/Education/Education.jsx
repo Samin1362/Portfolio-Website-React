@@ -58,7 +58,7 @@ const Education = forwardRef((props, ref) => {
                 Bangladesh
               </h2>
               <h3>Major in Machine Learning</h3>
-              <h4 className="font-bold text-xl">CGPA: 3.10</h4>
+              <h4 className="font-bold text-xl">CGPA: 3.11</h4>
             </div>
             <div className="md:w-1/4 ">
               <AnimatedContent
