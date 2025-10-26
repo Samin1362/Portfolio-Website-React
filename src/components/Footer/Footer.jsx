@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,14 +7,9 @@ const Footer = () => {
         <h1>Visit my blog</h1>
       </div>
       <div className="flex gap-[20px] justify-center items-center">
-        <a href="https://www.instagram.com/samin.israk1991/" target="_blank">
+        <a href="https://stackoverflow.com/users/30925421/md-samin-israk" target="_blank">
           <div className="w-[48px] h-[48px] bg-[#0E0E10] hover:bg-white hover:bg-opacity-15 border-2 border-gray-400 rounded-lg flex items-center justify-center">
-            <FaInstagram className="text-[24px]" />
-          </div>
-        </a>
-        <a href="https://www.facebook.com/samin.israk1991" target="_blank">
-          <div className="w-[48px] h-[48px] bg-[#0E0E10] hover:bg-white hover:bg-opacity-15 border-2 border-gray-400 rounded-lg flex items-center justify-center">
-            <FaFacebook className="text-[24px]" />
+            <FaStackOverflow className="text-[24px]" />
           </div>
         </a>
         <a href="https://github.com/Samin1362" target="_blank">
@@ -29,7 +24,7 @@ const Footer = () => {
         </a>
       </div>
       <div>
-        <h1>© 2015 Md. Samin Israk. All rights reserved.</h1>
+        <h1>© 2025 Md. Samin Israk. All rights reserved.</h1>
       </div>
     </div>
   );
