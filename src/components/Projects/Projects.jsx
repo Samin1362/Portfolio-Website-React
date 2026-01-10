@@ -5,18 +5,28 @@ import ChromaGrid from "../ChromaGrid/ChromaGrid";
 const Projects = forwardRef((props, ref) => {
   const items = [
     {
+      image:
+        "https://i.postimg.cc/3rPBPzQ3/Screenshot-2026-01-10-at-9-04-43-PM.png",
+      title: "Coaching Management System",
+      subtitle: "Full Stack Project",
+      handle: "@react @mongodb @express @nodejs",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(180deg, #FFD580, #000)",
+      url: "https://rootx-cms-firebase-project.web.app/",
+    },
+    {
       image: "https://i.postimg.cc/qv4p6q04/temp-Image-VQdn-IE.avif",
-      title: "React + Tailwind",
-      subtitle: "Frontend Project",
-      handle: "@react",
+      title: "Artwork Classification",
+      subtitle: "Full Stack Project + AI",
+      handle: "@react @mongodb @express @nodejs @blockchain",
       borderColor: "#7C3AED",
       gradient: "linear-gradient(145deg, #6D28D9, #1E1B4B)",
       url: "https://merakinexus.netlify.app",
     },
     {
       image: "https://i.postimg.cc/x8BcS2bV/temp-Imagev5-E4bh.avif",
-      title: "React Project",
-      subtitle: "AI Assistant for Entrepreneurs",
+      title: "AI Assistant for Entrepreneurs",
+      subtitle: "Machine Learning Project",
       handle: "@react",
       borderColor: "#1E3A8A",
       gradient: "linear-gradient(145deg, #1E3A8A, #10B981, #0D9488)",
@@ -70,7 +80,7 @@ const Projects = forwardRef((props, ref) => {
   ];
 
   return (
-    <div ref={ref} className="max-w-[1240px] mx-auto mt-[30px]">
+    <div ref={ref} className="max-w-[1240px] mx-auto mt-[30px] mb-12 md:mb-16">
       {/* heading  */}
       <div className="">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -84,10 +94,7 @@ const Projects = forwardRef((props, ref) => {
         </h1>
       </div>
       {/* content  */}
-      <div
-        style={{ position: "relative" }}
-        className="mt-[30px] h-[1100px] md:h-[600px] lg:h-[300px]"
-      >
+      <div style={{ position: "relative" }} className="mt-[30px] pb-8">
         <ChromaGrid
           items={items}
           radius={300}

@@ -129,7 +129,7 @@ const ChromaGrid = ({
       ref={rootRef}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
+      className={`relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center ${className}`}
       style={
         {
           "--r": `${radius}px`,
@@ -143,12 +143,13 @@ const ChromaGrid = ({
           key={i}
           onMouseMove={handleCardMove}
           onClick={() => handleCardClick(c.url)}
-          className="group relative flex flex-col w-[300px] rounded-[20px] overflow-hidden border-2 border-transparent transition-colors duration-300 cursor-pointer"
+          className="group relative flex flex-col w-full max-w-[320px] h-[420px] rounded-[20px] overflow-hidden border-2 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-2xl"
           style={
             {
               "--card-border": c.borderColor || "transparent",
               background: c.gradient,
               "--spotlight-color": "rgba(255,255,255,0.3)",
+              borderColor: c.borderColor || "transparent",
             }
           }
         >
@@ -159,25 +160,36 @@ const ChromaGrid = ({
                 "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
             }}
           />
-          <div className="relative z-10 flex-1 p-[10px] box-border">
+          <div className="relative z-10 h-[240px] p-[12px] box-border">
             <img
               src={c.image}
               alt={c.title}
               loading="lazy"
-              className="w-full h-full object-cover rounded-[10px]"
+              className="w-full h-full object-cover rounded-[12px]"
             />
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
+          <footer className="relative z-10 flex-1 p-4 text-white font-sans flex flex-col gap-2">
+            <h3 className="m-0 text-[1.15rem] font-bold leading-tight line-clamp-2">
+              {c.title}
+            </h3>
+            <p className="m-0 text-[0.9rem] opacity-90 leading-snug">
+              {c.subtitle}
+            </p>
             {c.handle && (
-              <span className="text-[0.95rem] opacity-80 text-right">
-                {c.handle}
-              </span>
+              <div className="mt-auto flex flex-wrap gap-1.5">
+                {c.handle.split(' ').map((tag, idx) => (
+                  <span
+                    key={idx}
+                    className="text-[0.75rem] px-2 py-1 rounded-full bg-white/20 backdrop-blur-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             )}
-            <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
             {c.location && (
-              <span className="text-[0.85rem] opacity-85 text-right">
-                {c.location}
+              <span className="text-[0.85rem] opacity-85 mt-1">
+                📍 {c.location}
               </span>
             )}
           </footer>
@@ -188,13 +200,13 @@ const ChromaGrid = ({
         ref={fadeRef}
         className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
         style={{
-          backdropFilter: "grayscale(1) brightness(0.78)",
-          WebkitBackdropFilter: "grayscale(1) brightness(0.78)",
+          backdropFilter: "grayscale(0.3) brightness(0.95)",
+          WebkitBackdropFilter: "grayscale(0.3) brightness(0.95)",
           background: "rgba(0,0,0,0.001)",
           maskImage:
-            "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
+            "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 20%,rgba(0,0,0,0.15)50%,rgba(0,0,0,0.35)80%,rgba(0,0,0,0.5)100%)",
           WebkitMaskImage:
-            "radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)",
+            "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 20%,rgba(0,0,0,0.15)50%,rgba(0,0,0,0.35)80%,rgba(0,0,0,0.5)100%)",
           opacity: 1,
         }}
       />
