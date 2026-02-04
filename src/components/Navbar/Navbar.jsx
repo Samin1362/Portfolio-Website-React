@@ -9,7 +9,6 @@ const Navbar = ({
   projectsRef,
   reportsRef,
   educationRef,
-  eventsRef,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const mobileContent = useRef(null);
@@ -23,9 +22,7 @@ const Navbar = ({
   const navItems = [
     { name: "Skills", ref: skillsRef },
     { name: "Projects", ref: projectsRef },
-    { name: "Reports", ref: reportsRef },
     { name: "Education", ref: educationRef },
-    { name: "Events", ref: eventsRef },
   ];
 
   // Initial navbar animation

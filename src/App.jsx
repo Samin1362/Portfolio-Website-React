@@ -11,15 +11,12 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Events from "./components/Events/Events";
 
 function App() {
   const contactRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
-  const reportsRef = useRef(null);
   const educationRef = useRef(null);
-  const eventsRef = useRef(null);
   const allContentLoading = useRef(null);
 
   // content loading animation
@@ -41,25 +38,19 @@ function App() {
         contactRef={contactRef}
         skillsRef={skillsRef}
         projectsRef={projectsRef}
-        reportsRef={reportsRef}
         educationRef={educationRef}
-        eventsRef={eventsRef}
       />
       <FloatingNavbar
         skillsRef={skillsRef}
         projectsRef={projectsRef}
-        reportsRef={reportsRef}
         educationRef={educationRef}
-        eventsRef={eventsRef}
         contactRef={contactRef}
       />
       <Banner allContentLoading={allContentLoading}></Banner>
       <TechLogoBar></TechLogoBar>
       <Skills ref={skillsRef}></Skills>
       <Projects ref={projectsRef}></Projects>
-      <Reports ref={reportsRef}></Reports>
       <Education ref={educationRef}></Education>
-      <Events ref={eventsRef}></Events>
       <Contact ref={contactRef}></Contact>
       <Footer></Footer>
     </>

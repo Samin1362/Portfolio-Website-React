@@ -6,7 +6,6 @@ import {
   Briefcase,
   FileText,
   GraduationCap,
-  Calendar,
   Mail,
   Menu,
   X,
@@ -17,7 +16,6 @@ const FloatingNavbar = ({
   projectsRef,
   reportsRef,
   educationRef,
-  eventsRef,
   contactRef,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,22 +55,10 @@ const FloatingNavbar = ({
       color: "from-green-500 to-emerald-400",
     },
     {
-      name: "Reports",
-      icon: FileText,
-      ref: reportsRef,
-      color: "from-orange-500 to-yellow-400",
-    },
-    {
       name: "Education",
       icon: GraduationCap,
       ref: educationRef,
       color: "from-red-500 to-pink-400",
-    },
-    {
-      name: "Events",
-      icon: Calendar,
-      ref: eventsRef,
-      color: "from-teal-500 to-cyan-400",
     },
     {
       name: "Contact",
