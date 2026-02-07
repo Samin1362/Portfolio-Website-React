@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import { ExternalLink } from "lucide-react";
 
 const ChromaGrid = ({
   items,
@@ -8,6 +9,7 @@ const ChromaGrid = ({
   damping = 0.45,
   fadeOut = 0.6,
   ease = "power3.out",
+  onCardClick,
 }) => {
   const rootRef = useRef(null);
   const fadeRef = useRef(null);
@@ -24,51 +26,6 @@ const ChromaGrid = ({
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://github.com/",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=11",
-      title: "Jordan Chen",
-      subtitle: "DevOps Engineer",
-      handle: "@jordanchen",
-      borderColor: "#10B981",
-      gradient: "linear-gradient(210deg,#10B981,#000)",
-      url: "https://linkedin.com/in/",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=3",
-      title: "Morgan Blake",
-      subtitle: "UI/UX Designer",
-      handle: "@morganblake",
-      borderColor: "#F59E0B",
-      gradient: "linear-gradient(165deg,#F59E0B,#000)",
-      url: "https://dribbble.com/",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=16",
-      title: "Casey Park",
-      subtitle: "Data Scientist",
-      handle: "@caseypark",
-      borderColor: "#EF4444",
-      gradient: "linear-gradient(195deg,#EF4444,#000)",
-      url: "https://kaggle.com/",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=25",
-      title: "Sam Kim",
-      subtitle: "Mobile Developer",
-      handle: "@thesamkim",
-      borderColor: "#8B5CF6",
-      gradient: "linear-gradient(225deg,#8B5CF6,#000)",
-      url: "https://github.com/",
-    },
-    {
-      image: "https://i.pravatar.cc/300?img=60",
-      title: "Tyler Rodriguez",
-      subtitle: "Cloud Architect",
-      handle: "@tylerrod",
-      borderColor: "#06B6D4",
-      gradient: "linear-gradient(135deg,#06B6D4,#000)",
-      url: "https://aws.amazon.com/",
     },
   ];
 
@@ -113,8 +70,12 @@ const ChromaGrid = ({
     });
   };
 
-  const handleCardClick = (url) => {
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
+  const handleCardClick = (item, index) => {
+    if (onCardClick) {
+      onCardClick(item, index);
+    } else if (item.url) {
+      window.open(item.url, "_blank", "noopener,noreferrer");
+    }
   };
 
   const handleCardMove = (e) => {
@@ -129,7 +90,7 @@ const ChromaGrid = ({
       ref={rootRef}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      className={`relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center ${className}`}
+      className={`relative w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center ${className}`}
       style={
         {
           "--r": `${radius}px`,
@@ -142,66 +103,114 @@ const ChromaGrid = ({
         <article
           key={i}
           onMouseMove={handleCardMove}
-          onClick={() => handleCardClick(c.url)}
-          className="group relative flex flex-col w-full max-w-[320px] h-[420px] rounded-[20px] overflow-hidden border-2 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:shadow-2xl"
-          style={
-            {
-              "--card-border": c.borderColor || "transparent",
-              background: c.gradient,
-              "--spotlight-color": "rgba(255,255,255,0.3)",
-              borderColor: c.borderColor || "transparent",
-            }
-          }
+          onClick={() => handleCardClick(c, i)}
+          className="group relative flex flex-col w-full max-w-[340px] h-[460px] cursor-pointer"
         >
+          {/* Subtle glow effect on hover only */}
           <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
+            className="absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-60 blur-lg transition-opacity duration-300"
             style={{
-              background:
-                "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
+              background: c.borderColor,
             }}
           />
-          <div className="relative z-10 h-[240px] p-[12px] box-border">
-            <img
-              src={c.image}
-              alt={c.title}
-              loading="lazy"
-              className="w-full h-full object-cover rounded-[12px]"
+
+          {/* Main card container */}
+          <div
+            className="relative flex flex-col w-full h-full rounded-2xl overflow-hidden border-2 backdrop-blur-sm transition-all duration-300 group-hover:scale-[1.01] group-hover:shadow-xl bg-gradient-to-br from-[#0E0E10] to-[#1a1a1f]"
+            style={{
+              borderColor: `${c.borderColor}60`,
+            }}
+          >
+            {/* Spotlight effect on hover */}
+            <div
+              className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
+              style={{
+                background:
+                  "radial-gradient(circle 400px at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.1), transparent 60%)",
+              }}
             />
-          </div>
-          <footer className="relative z-10 flex-1 p-4 text-white font-sans flex flex-col gap-2">
-            <h3 className="m-0 text-[1.15rem] font-bold leading-tight line-clamp-2">
-              {c.title}
-            </h3>
-            <p className="m-0 text-[0.9rem] opacity-90 leading-snug">
-              {c.subtitle}
-            </p>
-            {c.handle && (
-              <div className="mt-auto flex flex-wrap gap-1.5">
-                {c.handle.split(' ').map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="text-[0.75rem] px-2 py-1 rounded-full bg-white/20 backdrop-blur-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
+
+            {/* Click to view badge - only on hover */}
+            <div className="absolute top-3 right-3 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="flex items-center gap-1.5 px-2.5 py-1 bg-black/70 backdrop-blur-md rounded-lg border border-white/20">
+                <ExternalLink className="w-3 h-3 text-white" />
+                <span className="text-[10px] font-semibold text-white">View Details</span>
               </div>
-            )}
-            {c.location && (
-              <span className="text-[0.85rem] opacity-85 mt-1">
-                📍 {c.location}
-              </span>
-            )}
-          </footer>
+            </div>
+
+            {/* Image section with enhanced styling */}
+            <div className="relative z-10 h-[240px] p-3">
+              <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10">
+                {/* Subtle gradient overlay */}
+                <div
+                  className="absolute inset-0 opacity-20 z-10 pointer-events-none"
+                  style={{
+                    background: `linear-gradient(135deg, ${c.borderColor}40, transparent)`,
+                  }}
+                />
+
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+
+            {/* Content section with glassmorphism */}
+            <footer className="relative z-10 flex-1 p-4 text-white font-sans flex flex-col gap-3 bg-white/5 backdrop-blur-sm">
+
+              {/* Title with icon */}
+              <div className="flex items-start gap-2">
+                <div
+                  className="mt-1 w-1 h-6 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: c.borderColor }}
+                />
+                <h3 className="flex-1 text-[1.15rem] font-bold leading-tight line-clamp-2 text-white transition-colors duration-300"
+                  style={{
+                    color: 'white'
+                  }}
+                >
+                  {c.title}
+                </h3>
+              </div>
+
+              {/* Subtitle */}
+              <p className="text-[0.85rem] text-gray-400 leading-snug">
+                {c.subtitle}
+              </p>
+
+              {/* Tags with enhanced styling */}
+              {c.handle && (
+                <div className="mt-auto flex flex-wrap gap-1.5">
+                  {c.handle.split(' ').map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[0.7rem] px-2.5 py-1 rounded-full font-medium transition-colors duration-200"
+                      style={{
+                        background: `${c.borderColor}20`,
+                        border: `1px solid ${c.borderColor}40`,
+                        color: c.borderColor,
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </footer>
+          </div>
         </article>
       ))}
 
+      {/* Fade overlay for spotlight effect */}
       <div
         ref={fadeRef}
         className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
         style={{
-          backdropFilter: "grayscale(0.3) brightness(0.95)",
-          WebkitBackdropFilter: "grayscale(0.3) brightness(0.95)",
+          backdropFilter: "grayscale(0.2) brightness(0.95)",
+          WebkitBackdropFilter: "grayscale(0.2) brightness(0.95)",
           background: "rgba(0,0,0,0.001)",
           maskImage:
             "radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 20%,rgba(0,0,0,0.15)50%,rgba(0,0,0,0.35)80%,rgba(0,0,0,0.5)100%)",

@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { FaMessage, FaPaperPlane } from "react-icons/fa6";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from '@emailjs/browser';
 import ShinyText from "../ShinyText/ShinyText";
 import AnimatedEnvelope from "../AnimatedEnvelope/AnimatedEnvelope";
 import AnimatedContent from "../AnimatedContent/AnimatedContent";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = 'service_jckl8u8';
+const EMAILJS_TEMPLATE_ID = 'template_bzgix4t';
+const EMAILJS_PUBLIC_KEY = 'WX_GRXsHQdR4UYvTI';
 
 const Contact = ({ ref }) => {
   // Form state
@@ -85,19 +90,38 @@ const Contact = ({ ref }) => {
     setStatusMessage('');
 
     try {
-      const response = await fetch(`${API_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Get current timestamp in a readable format
+      const now = new Date();
+      const time = now.toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
       });
 
-      const data = await response.json();
+      // Prepare template parameters matching EmailJS template variables
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: time,
+        reply_to: formData.email // This allows you to reply directly to the sender
+      };
 
-      if (response.ok) {
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      if (response.status === 200) {
         setStatus('success');
-        setStatusMessage(data.message || 'Your message has been sent successfully!');
+        setStatusMessage('Your message has been sent successfully! I\'ll get back to you soon.');
         // Reset form
         setFormData({ name: '', email: '', message: '' });
         setErrors({});
@@ -108,13 +132,12 @@ const Contact = ({ ref }) => {
           setStatusMessage('');
         }, 5000);
       } else {
-        setStatus('error');
-        setStatusMessage(data.error || 'Failed to send message. Please try again.');
+        throw new Error('Failed to send email');
       }
     } catch (error) {
-      console.error('Network error:', error);
+      console.error('EmailJS error:', error);
       setStatus('error');
-      setStatusMessage('Network error. Please check your connection and try again.');
+      setStatusMessage('Failed to send message. Please try again or contact me directly.');
     } finally {
       setLoading(false);
     }
