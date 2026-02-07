@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.23.22",
     "gsap": "^3.13.0",
     "lucide-react": "^0.542.0",
