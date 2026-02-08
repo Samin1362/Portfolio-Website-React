@@ -223,7 +223,7 @@ const Banner = ({ allContentLoading }) => {
 
             {/* LinkedIn Button (Optional - you can add your LinkedIn) */}
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/samin-israk/"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-6 md:py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-2 border-gray-600/30 rounded-lg text-sm md:text-base font-semibold transition-all duration-300"
