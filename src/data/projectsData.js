@@ -10,6 +10,45 @@ export const projectTypes = [
 export const projectsData = [
   {
     id: 1,
+    title: "NexCart",
+    subtitle: "Modern E-commerce Platform",
+    type: "Next.js",
+    images: ["https://i.postimg.cc/zGq9WXwK/Screenshot-2026-03-29-at-3-45-05-PM.png"],
+    description:
+      "A modern, full-featured e-commerce platform built with Next.js, TypeScript, and the MERN stack. NexCart delivers a seamless shopping experience with role-based dashboards, product management, secure authentication, and scalable architecture.",
+    features: [
+      "User authentication and authorization",
+      "Role-based access control (Admin/User)",
+      "Product listing and management",
+      "Shopping cart and checkout system",
+      "Order management",
+      "Responsive and modern UI",
+      "Secure API integration",
+      "Performance optimized with SSR",
+    ],
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Express.js",
+      "Node.js",
+      "Tailwind CSS",
+    ],
+    tags: ["@nextjs", "@typescript", "@mongodb", "@express", "@nodejs"],
+    links: {
+      github: "#",
+      frontend: "https://github.com/Samin1362/NexCart-Frontend.git",
+      backend: "https://github.com/Samin1362/NexCart-Backend.git",
+      live: "https://nex-cart-frontend.vercel.app",
+    },
+    credentials: {
+      note: "Demo credentials are available on the login page",
+    },
+    borderColor: "#6366F1",
+    gradient: "linear-gradient(180deg, #6366F1, #000)",
+  },
+  {
+    id: 2,
     title: "Coaching Management System",
     subtitle: "Full Stack Project",
     type: "Full Stack",
@@ -46,7 +85,7 @@ export const projectsData = [
     gradient: "linear-gradient(180deg, #FFD580, #000)",
   },
   {
-    id: 2,
+    id: 3,
     title: "Scholarship Management Platform",
     subtitle: "Full Stack Project",
     type: "Full Stack",
@@ -90,7 +129,7 @@ export const projectsData = [
     gradient: "linear-gradient(145deg, #0F766E, #22C55E, #16A34A)",
   },
   {
-    id: 3,
+    id: 4,
     title: "KrishiLink Agro Marketplace",
     subtitle: "Full Stack Project",
     type: "Full Stack",
@@ -139,7 +178,7 @@ export const projectsData = [
     gradient: "linear-gradient(145deg, #166534, #22C55E, #4ADE80)",
   },
   {
-    id: 4,
+    id: 5,
     title: "Game Hub for Gamers",
     subtitle: "Frontend Project",
     type: "Firebase",
@@ -172,7 +211,7 @@ export const projectsData = [
     gradient: "linear-gradient(145deg, #1E1B4B, #8B5CF6, #EC4899)",
   },
   {
-    id: 5,
+    id: 6,
     title: "React Project",
     subtitle: "Frontend Project",
     type: "React.js",
@@ -199,7 +238,7 @@ export const projectsData = [
     gradient: "linear-gradient(145deg, #3B82F6, #000)",
   },
   {
-    id: 6,
+    id: 7,
     title: "JavaScript Project",
     subtitle: "Frontend Project",
     type: "JavaScript",
@@ -226,7 +265,7 @@ export const projectsData = [
     gradient: "linear-gradient(180deg, #10B981, #000)",
   },
   {
-    id: 7,
+    id: 8,
     title: "Responsive Website",
     subtitle: "Frontend Project",
     type: "JavaScript",
@@ -253,7 +292,7 @@ export const projectsData = [
     gradient: "linear-gradient(180deg, #FFD580, #000)",
   },
   {
-    id: 8,
+    id: 9,
     title: "Responsive Website",
     subtitle: "Frontend Project",
     type: "JavaScript",
@@ -280,7 +319,7 @@ export const projectsData = [
     gradient: "linear-gradient(180deg, #10B981, #000)",
   },
   {
-    id: 9,
+    id: 10,
     title: "Artwork Classification",
     subtitle: "Full Stack Project + AI",
     type: "AI/ML",
@@ -319,7 +358,7 @@ export const projectsData = [
     gradient: "linear-gradient(145deg, #6D28D9, #1E1B4B)",
   },
   {
-    id: 10,
+    id: 11,
     title: "AI Assistant for Entrepreneurs",
     subtitle: "Machine Learning Project",
     type: "AI/ML",
@@ -346,11 +385,13 @@ export const projectsData = [
     gradient: "linear-gradient(145deg, #1E3A8A, #10B981, #0D9488)",
   },
   {
-    id: 11,
+    id: 12,
     title: "ItemHub E-commerce Application",
     subtitle: "Full Stack Application",
     type: "Next.js",
-    images: ["https://i.postimg.cc/TwbRBGkh/Screenshot-2026-02-08-at-6-12-17-PM.png"],
+    images: [
+      "https://i.postimg.cc/TwbRBGkh/Screenshot-2026-02-08-at-6-12-17-PM.png",
+    ],
     description:
       "ItemHub is a modern e-commerce web application built with Next.js App Router. It features a public landing page, item browsing, detailed product views, authentication with cookie-based sessions, protected routes, and a secure item creation flow integrated with an Express backend API.",
     features: [
