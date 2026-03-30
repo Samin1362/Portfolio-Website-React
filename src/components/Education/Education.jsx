@@ -59,7 +59,7 @@ const Education = forwardRef((props, ref) => {
                   <Award size={24} className="text-purple-400" />
                   <div className="text-center">
                     <p className="text-gray-400 text-xs mb-0.5">CGPA</p>
-                    <p className="text-white font-bold text-xl">3.11</p>
+                    <p className="text-white font-bold text-xl">3.10</p>
                   </div>
                 </div>
               </div>
