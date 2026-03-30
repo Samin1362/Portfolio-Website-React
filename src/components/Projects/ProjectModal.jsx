@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, Github, Code2, Lock, User, Copy, Check } from "lucide-react";
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
