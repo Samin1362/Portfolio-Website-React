@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaLinkedin, FaStackOverflow } from "react-icons/f
 
 const Footer = () => {
   return (
-    <div className="max-w-[1440px] mx-auto py-[50px] px-[100px] flex flex-col gap-2 text-center md:flex-row items-center justify-between">
+    <div className="max-w-[1440px] mx-auto py-[50px] px-4 md:px-[100px] flex flex-col gap-4 text-center md:flex-row items-center justify-between">
       <div>
         <h1>Visit my blog</h1>
       </div>
