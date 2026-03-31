@@ -69,7 +69,7 @@ const skillsData = [
 
 const Skills = forwardRef((props, ref) => {
   return (
-    <div ref={ref} className="max-w-[1240px] mx-auto">
+    <div ref={ref} className="max-w-[1240px] mx-auto px-4">
       {/* Heading */}
       <div className="mb-8 md:mb-12">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">
@@ -113,7 +113,7 @@ const Skills = forwardRef((props, ref) => {
               </div>
 
               {/* Skills Grid */}
-              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <GlareHover
                     key={skill.name}

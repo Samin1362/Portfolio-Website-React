@@ -144,7 +144,7 @@ const Contact = ({ ref }) => {
   };
 
   return (
-    <div ref={ref} className="max-w-[1240px] mx-auto mt-[30px] mb-12">
+    <div ref={ref} className="max-w-[1240px] mx-auto mt-[30px] mb-12 px-4">
       {/* Heading */}
       <div className="mb-8">
         <div className="w-fit mx-auto py-[6px] px-[20px] flex items-center justify-center bg-[#282732] gap-2 rounded-[16px]">

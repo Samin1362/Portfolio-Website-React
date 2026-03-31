@@ -177,7 +177,7 @@ const Navbar = ({
   };
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-50 px-4 md:px-0">
       {/* Main Navbar */}
       <div
         ref={navbarRef}
