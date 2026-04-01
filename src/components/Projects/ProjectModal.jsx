@@ -66,7 +66,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black/95 backdrop-blur-2xl p-4 overflow-x-hidden overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
@@ -82,7 +82,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               duration: 0.6,
             }}
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-6xl w-full my-4"
+            className="relative max-w-6xl w-full max-h-[calc(100vh-2rem)] flex flex-col"
           >
             {/* Gradient glow effect */}
             <div
@@ -93,7 +93,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             />
 
             {/* Main modal container */}
-            <div className="relative bg-gradient-to-br from-[#0E0E10] to-[#1a1a1f] border-2 rounded-3xl shadow-2xl overflow-hidden"
+            <div className="relative bg-gradient-to-br from-[#0E0E10] to-[#1a1a1f] border-2 rounded-3xl shadow-2xl overflow-hidden flex flex-col min-h-0"
               style={{ borderColor: `${project.borderColor}40` }}
             >
               {/* Close Button - Fixed position to avoid overlap */}
@@ -301,7 +301,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col lg:flex-row gap-4 md:gap-6 p-4 md:p-6 overflow-x-hidden">
+              <div className="flex flex-col lg:flex-row gap-4 md:gap-6 p-4 md:p-6 overflow-y-auto overflow-x-hidden flex-1 min-h-0">
                 {/* Left Column - Image */}
                 <motion.div
                   className="w-full lg:w-5/12 flex-shrink-0"
