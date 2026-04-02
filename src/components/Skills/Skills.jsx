@@ -4,7 +4,7 @@ import { FaReact, FaNodeJs, FaGitAlt, FaGithub, FaDatabase, FaHtml5, FaBolt, FaR
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
 import { TbBrandNextjs, TbApi } from "react-icons/tb";
-import { SiReactrouter, SiExpress, SiMongodb, SiVercel, SiNetlify, SiRender, SiAnthropic } from "react-icons/si";
+import { SiReactrouter, SiExpress, SiMongodb, SiVercel, SiNetlify, SiRender, SiAnthropic, SiTypescript } from "react-icons/si";
 import { FaCss3Alt } from "react-icons/fa";
 import { MdDesignServices, MdSecurity } from "react-icons/md";
 import { VscCode } from "react-icons/vsc";
@@ -18,12 +18,13 @@ const skillsData = [
     icon: FaCode,
     iconColor: "#7C3AED",
     skills: [
+      { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
       { name: "JavaScript (ES6+)", icon: IoLogoJavascript, color: "#F7DF1E" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
       { name: "React", icon: FaReact, color: "#61dafb" },
       { name: "Next.js", icon: TbBrandNextjs, color: "#FFFFFF" },
       { name: "React Router", icon: SiReactrouter, color: "#CA4245" },
-      { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
-      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "#61dafb" },
       { name: "Responsive UI/UX", icon: MdDesignServices, color: "#7C3AED" },
     ],
