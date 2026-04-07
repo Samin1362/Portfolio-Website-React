@@ -3,12 +3,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import profileImg from "../../assets/cv-image-dark.jpg";
 import ShinyText from "../ShinyText/ShinyText";
-import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaDownload, FaGithub, FaLinkedin, FaCirclePlay } from "react-icons/fa6";
 import { Code2, Sparkles } from "lucide-react";
 
 const Banner = ({ allContentLoading }) => {
   // CV Download URL - converted from Google Drive view link to download link
   const cvDownloadUrl = "https://drive.google.com/uc?export=download&id=1A4mFM58J2FmPloOcG2Qda0_A9-k2wmpY";
+  const introVideoUrl = "https://drive.google.com/file/d/1wMsgTm-rTqQf3z5m4Y3zt_nRaFD7LwFV/view?usp=share_link";
 
   return (
     <div
@@ -232,6 +233,19 @@ const Banner = ({ allContentLoading }) => {
             >
               <FaLinkedin className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:scale-110 transition-transform" />
               <span>LinkedIn</span>
+            </motion.a>
+
+            {/* Intro Video Button */}
+            <motion.a
+              href={introVideoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-1.5 md:gap-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-pink-600/80 to-red-600/80 hover:from-pink-700 hover:to-red-700 backdrop-blur-sm border-2 border-pink-500/30 rounded-lg text-sm md:text-base font-semibold transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaCirclePlay className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:scale-110 transition-transform" />
+              <span>Intro Video</span>
             </motion.a>
           </motion.div>
 
