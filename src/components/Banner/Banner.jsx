@@ -1,7 +1,7 @@
 import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import profileImg from "../../assets/cv-image-dark.jpg";
+import profileImg from "../../assets/cv-image-dark.webp";
 import ShinyText from "../ShinyText/ShinyText";
 import { FaDownload, FaGithub, FaLinkedin, FaCirclePlay } from "react-icons/fa6";
 import { Code2, Sparkles } from "lucide-react";
