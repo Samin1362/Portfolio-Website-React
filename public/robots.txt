@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samin-israk.vercel.app/sitemap.xml
