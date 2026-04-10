@@ -3,7 +3,7 @@ import { FaHandsHelping } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import ChromaGrid from "../ChromaGrid/ChromaGrid";
 import ProjectModal from "./ProjectModal";
 import { projectsData, projectTypes } from "../../data/projectsData";

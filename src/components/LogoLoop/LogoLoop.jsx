@@ -26,10 +26,17 @@ const useResizeObserver = (
 ) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
-      const handleResize = () => callback();
+      let timer;
+      const handleResize = () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => callback(), 150);
+      };
       window.addEventListener("resize", handleResize);
       callback();
-      return () => window.removeEventListener("resize", handleResize);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener("resize", handleResize);
+      };
     }
 
     const observers = elements.map((ref) => {

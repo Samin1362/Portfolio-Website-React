@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ShinyText from "../ShinyText/ShinyText";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 const Navbar = ({
   contactRef,
