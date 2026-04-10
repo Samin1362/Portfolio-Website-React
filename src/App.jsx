@@ -4,7 +4,7 @@ import FloatingNavbar from "./components/FloatingNavbar/FloatingNavbar";
 import Banner from "./components/Banner/Banner";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 const TechLogoBar = lazy(() => import("./components/TechLogoBar/TechLogoBar"));
 const Skills = lazy(() => import("./components/Skills/Skills"));

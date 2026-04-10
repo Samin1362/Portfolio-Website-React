@@ -24,14 +24,22 @@ const FloatingNavbar = ({
 
   // Check if screen is mobile size
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+    setIsMobile(window.innerWidth < 768);
+
+    let timer;
+    const debouncedCheck = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        setIsMobile(window.innerWidth < 768);
+      }, 150);
     };
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
+    window.addEventListener("resize", debouncedCheck);
 
-    return () => window.removeEventListener("resize", checkScreenSize);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", debouncedCheck);
+    };
   }, []);
 
   // Navigation items with icons and colors
