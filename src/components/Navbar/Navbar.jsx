@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import ShinyText from "../ShinyText/ShinyText";
 import { gsap } from "gsap";
+import { useAuth } from "../../context/AuthContext";
 
 const Navbar = ({
   contactRef,
@@ -10,6 +12,7 @@ const Navbar = ({
   reportsRef,
   educationRef,
 }) => {
+  const { user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const mobileContent = useRef(null);
   const navbarRef = useRef(null);
@@ -231,8 +234,8 @@ const Navbar = ({
           ))}
         </div>
 
-        {/* Contact Button */}
-        <div className="hidden md:flex relative z-10">
+        {/* Contact + Login/Dashboard Buttons */}
+        <div className="hidden md:flex items-center gap-3 relative z-10">
           <div
             ref={contactBtnRef}
             onClick={handleContactClick}
@@ -253,6 +256,19 @@ const Navbar = ({
               />
             </div>
           </div>
+
+          {/* Login / Dashboard Button */}
+          <Link
+            to={user ? "/dashboard" : "/login"}
+            className="relative group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED] to-[#10B981] rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+            <div className="relative bg-gradient-to-r from-[#7C3AED] to-[#10B981] hover:from-[#6D28D9] hover:to-[#059669] px-[24px] py-3.5 rounded-xl transition-all duration-300 transform group-hover:scale-105 group-active:scale-95 border border-white/10 shadow-lg">
+              <span className="text-white font-semibold text-sm">
+                {user ? "Dashboard" : "Login"}
+              </span>
+            </div>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -318,6 +334,17 @@ const Navbar = ({
                   textColor="black"
                 />
               </div>
+
+              {/* Mobile Login/Dashboard Button */}
+              <Link
+                to={user ? "/dashboard" : "/login"}
+                onClick={() => setIsOpen(false)}
+                className="mobile-nav-item mt-2 bg-gradient-to-r from-[#7C3AED] to-[#10B981] hover:from-[#6D28D9] hover:to-[#059669] px-6 py-3.5 text-center rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg border border-white/10"
+              >
+                <span className="text-white font-semibold text-sm">
+                  {user ? "Dashboard" : "Login"}
+                </span>
+              </Link>
             </div>
           </div>
         </div>
