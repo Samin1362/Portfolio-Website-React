@@ -6,7 +6,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { gsap } from "gsap";
 import ChromaGrid from "../ChromaGrid/ChromaGrid";
 import ProjectModal from "./ProjectModal";
-import { projectsData, projectTypes } from "../../data/projectsData";
+import { projectsData as fallbackProjects, projectTypes } from "../../data/projectsData";
+
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+
+// Map snake_case DB fields to camelCase frontend fields
+const mapProject = (p) => ({
+  ...p,
+  techStack: p.tech_stack || p.techStack || [],
+  borderColor: p.border_color || p.borderColor || "#7C3AED",
+});
 
 const Projects = forwardRef((props, ref) => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -15,12 +24,32 @@ const Projects = forwardRef((props, ref) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
   const gridRef = useRef(null);
+  const [allProjects, setAllProjects] = useState(fallbackProjects);
+  const [apiLoaded, setApiLoaded] = useState(false);
+
+  // Fetch projects from API
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/projects`);
+        const data = await res.json();
+        if (data.success && data.projects.length > 0) {
+          setAllProjects(data.projects.map(mapProject));
+        }
+      } catch {
+        // Use fallback static data
+      } finally {
+        setApiLoaded(true);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   // Filtered projects based on active filter
   const filteredProjects = useMemo(() => {
-    if (activeFilter === "All") return projectsData;
-    return projectsData.filter((p) => p.type === activeFilter);
-  }, [activeFilter]);
+    if (activeFilter === "All") return allProjects;
+    return allProjects.filter((p) => p.type === activeFilter);
+  }, [activeFilter, allProjects]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
@@ -30,14 +59,14 @@ const Projects = forwardRef((props, ref) => {
 
   // Project counts for filter badges
   const projectCounts = useMemo(() => {
-    const counts = { All: projectsData.length };
+    const counts = { All: allProjects.length };
     projectTypes.forEach((type) => {
       if (type !== "All") {
-        counts[type] = projectsData.filter((p) => p.type === type).length;
+        counts[type] = allProjects.filter((p) => p.type === type).length;
       }
     });
     return counts;
-  }, []);
+  }, [allProjects]);
 
   // Transform projectsData to match ChromaGrid's expected format
   const gridItems = currentProjects.map((project) => ({
