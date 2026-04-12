@@ -10,6 +10,7 @@ import {
   FiArrowUp,
   FiArrowDown,
   FiExternalLink,
+  FiFolder,
 } from "react-icons/fi";
 
 const ProjectList = () => {
