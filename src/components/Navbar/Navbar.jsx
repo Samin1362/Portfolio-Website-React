@@ -262,9 +262,13 @@ const Navbar = ({
             to={user ? "/dashboard" : "/login"}
             className="relative group"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED] to-[#10B981] rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-            <div className="relative bg-gradient-to-r from-[#7C3AED] to-[#10B981] hover:from-[#6D28D9] hover:to-[#059669] px-[24px] py-3.5 rounded-xl transition-all duration-300 transform group-hover:scale-105 group-active:scale-95 border border-white/10 shadow-lg">
-              <span className="text-white font-semibold text-sm">
+            {/* Outer glow */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-blue-400 to-cyan-400 rounded-xl blur opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
+            {/* Inner button */}
+            <div className="relative flex items-center gap-2 bg-[#12121a] hover:bg-[#0e0e16] px-[24px] py-3.5 rounded-xl transition-all duration-300 transform group-hover:scale-105 group-active:scale-95 border border-indigo-500/30 group-hover:border-cyan-400/60 shadow-lg overflow-hidden">
+              {/* Shimmer sweep */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+              <span className="relative bg-gradient-to-r from-indigo-300 via-blue-200 to-cyan-300 bg-clip-text text-transparent font-semibold text-sm tracking-wide">
                 {user ? "Dashboard" : "Login"}
               </span>
             </div>
@@ -339,11 +343,15 @@ const Navbar = ({
               <Link
                 to={user ? "/dashboard" : "/login"}
                 onClick={() => setIsOpen(false)}
-                className="mobile-nav-item mt-2 bg-gradient-to-r from-[#7C3AED] to-[#10B981] hover:from-[#6D28D9] hover:to-[#059669] px-6 py-3.5 text-center rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg border border-white/10"
+                className="mobile-nav-item relative group mt-2 block"
               >
-                <span className="text-white font-semibold text-sm">
-                  {user ? "Dashboard" : "Login"}
-                </span>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-blue-400 to-cyan-400 rounded-xl blur opacity-50 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div className="relative flex items-center justify-center overflow-hidden bg-[#12121a] px-6 py-3.5 rounded-xl border border-indigo-500/30 group-hover:border-cyan-400/60 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg">
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+                  <span className="relative bg-gradient-to-r from-indigo-300 via-blue-200 to-cyan-300 bg-clip-text text-transparent font-semibold text-sm tracking-wide">
+                    {user ? "Dashboard" : "Login"}
+                  </span>
+                </div>
               </Link>
             </div>
           </div>
