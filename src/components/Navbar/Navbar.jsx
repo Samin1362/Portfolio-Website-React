@@ -184,7 +184,7 @@ const Navbar = ({
       {/* Main Navbar */}
       <div
         ref={navbarRef}
-        className="relative w-full max-w-[1240px] mx-auto bg-gradient-to-r from-[#1d1c22]/80 via-[#1d1c22]/90 to-[#1d1c22]/80 backdrop-blur-md my-[20px] md:my-[50px] p-[20px] md:p-[32px] flex items-center justify-between rounded-2xl transition-all duration-500"
+        className="relative w-full max-w-[1240px] mx-auto bg-gradient-to-r from-[#1d1c22]/80 via-[#1d1c22]/90 to-[#1d1c22]/80 backdrop-blur-md my-[20px] md:my-[50px] px-[20px] py-[12px] md:px-[32px] md:py-[16px] flex items-center justify-between rounded-2xl transition-all duration-500"
       >
         {/* Decorative background elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-blue-400/5 to-cyan-300/5 rounded-2xl"></div>
