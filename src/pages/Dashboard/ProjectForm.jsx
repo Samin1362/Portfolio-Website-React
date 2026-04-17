@@ -166,10 +166,10 @@ const ProjectForm = () => {
   if (loading) {
     return (
       <div className="max-w-3xl mx-auto">
-        <div className="h-8 bg-gray-700/30 rounded w-48 mb-8 animate-pulse" />
-        <div className="space-y-6">
+        <div className="h-7 bg-white/5 rounded w-48 mb-8 animate-pulse" />
+        <div className="space-y-4">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-12 bg-gray-700/30 rounded animate-pulse" />
+            <div key={i} className="h-12 bg-white/5 rounded-xl animate-pulse" />
           ))}
         </div>
       </div>
@@ -192,7 +192,7 @@ const ProjectForm = () => {
       </div>
 
       {error && (
-        <div className="mb-6 p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm">
+        <div className="mb-5 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
           {error}
         </div>
       )}
@@ -222,7 +222,7 @@ const ProjectForm = () => {
               <select
                 value={form.type}
                 onChange={(e) => updateField("type", e.target.value)}
-                className="w-full px-4 py-3 bg-[#282732] border border-gray-700/30 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full px-3.5 py-2.5 bg-white/5 border border-white/5 rounded-lg text-white focus:outline-none focus:border-purple-500/50 transition-colors text-sm"
               >
                 <option value="">Select type...</option>
                 {projectTypes.map((t) => (
@@ -234,21 +234,21 @@ const ProjectForm = () => {
             </div>
             <div className="flex items-end gap-4">
               <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-xs font-medium text-gray-400 mb-1.5">
                   Border Color
                 </label>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2.5">
                   <input
                     type="color"
                     value={form.border_color}
                     onChange={(e) => updateField("border_color", e.target.value)}
-                    className="w-10 h-10 rounded cursor-pointer border-0 bg-transparent"
+                    className="w-9 h-9 rounded-lg cursor-pointer border-0 bg-transparent"
                   />
                   <input
                     type="text"
                     value={form.border_color}
                     onChange={(e) => updateField("border_color", e.target.value)}
-                    className="flex-1 px-4 py-3 bg-[#282732] border border-gray-700/30 rounded-lg text-white font-mono text-sm focus:outline-none focus:border-purple-500"
+                    className="flex-1 px-3.5 py-2.5 bg-white/5 border border-white/5 rounded-lg text-white font-mono text-sm focus:outline-none focus:border-purple-500/50"
                   />
                 </div>
               </div>
@@ -426,11 +426,11 @@ const ProjectForm = () => {
         </Section>
 
         {/* Submit */}
-        <div className="flex gap-3 pt-4 border-t border-gray-700/30">
+        <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/5">
           <button
             type="submit"
             disabled={saving}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#7C3AED] to-[#10B981] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+            className="flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#7C3AED] to-[#10B981] text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 text-sm"
           >
             <FiSave className="w-4 h-4" />
             {saving
@@ -442,7 +442,7 @@ const ProjectForm = () => {
           <button
             type="button"
             onClick={() => navigate("/dashboard/projects")}
-            className="px-6 py-3 bg-[#282732] text-gray-300 rounded-lg hover:bg-[#2D3240] transition-colors"
+            className="px-6 py-2.5 bg-white/5 text-gray-300 rounded-lg hover:bg-white/10 transition-colors text-sm font-medium"
           >
             Cancel
           </button>
@@ -455,15 +455,17 @@ const ProjectForm = () => {
 // --- Reusable sub-components ---
 
 const Section = ({ title, children }) => (
-  <div className="bg-[#1a1a2e]/80 backdrop-blur-sm border border-gray-700/30 rounded-xl p-5">
-    <h2 className="text-lg font-semibold text-white mb-4">{title}</h2>
+  <div className="bg-[#0f0f1a] border border-white/5 rounded-xl p-5">
+    <h2 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
+      {title}
+    </h2>
     {children}
   </div>
 );
 
 const InputField = ({ label, value, onChange, placeholder, type = "text" }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-300 mb-2">
+    <label className="block text-xs font-medium text-gray-400 mb-1.5">
       {label}
     </label>
     <input
@@ -471,14 +473,14 @@ const InputField = ({ label, value, onChange, placeholder, type = "text" }) => (
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="w-full px-4 py-3 bg-[#282732] border border-gray-700/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors text-sm"
+      className="w-full px-3.5 py-2.5 bg-white/5 border border-white/5 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 transition-colors text-sm"
     />
   </div>
 );
 
 const TextareaField = ({ label, value, onChange, placeholder, rows = 3 }) => (
   <div>
-    <label className="block text-sm font-medium text-gray-300 mb-2">
+    <label className="block text-xs font-medium text-gray-400 mb-1.5">
       {label}
     </label>
     <textarea
@@ -486,7 +488,7 @@ const TextareaField = ({ label, value, onChange, placeholder, rows = 3 }) => (
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       rows={rows}
-      className="w-full px-4 py-3 bg-[#282732] border border-gray-700/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors text-sm resize-none"
+      className="w-full px-3.5 py-2.5 bg-white/5 border border-white/5 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 transition-colors text-sm resize-none"
     />
   </div>
 );
@@ -506,13 +508,13 @@ const DynamicArrayField = ({
           value={item}
           onChange={(e) => onUpdate(index, e.target.value)}
           placeholder={placeholder}
-          className="flex-1 px-4 py-2.5 bg-[#282732] border border-gray-700/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors text-sm"
+          className="flex-1 px-3.5 py-2.5 bg-white/5 border border-white/5 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-purple-500/50 transition-colors text-sm"
         />
         {items.length > 1 && (
           <button
             type="button"
             onClick={() => onRemove(index)}
-            className="p-2.5 text-gray-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
+            className="p-2.5 text-gray-600 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
           >
             <FiX className="w-4 h-4" />
           </button>
@@ -522,7 +524,7 @@ const DynamicArrayField = ({
     <button
       type="button"
       onClick={onAdd}
-      className="flex items-center gap-1.5 text-sm text-purple-400 hover:text-purple-300 transition-colors mt-1"
+      className="flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 transition-colors mt-1"
     >
       <FiPlus className="w-3.5 h-3.5" />
       Add another
